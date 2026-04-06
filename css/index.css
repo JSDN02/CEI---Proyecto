@@ -24,6 +24,7 @@ index.css
     --brand-primary: #ff7a00; /* Color corporativo principal (Naranja) */
     --brand-soft: #ff9a3c;    /* Versión suavizada del color principal */
     --brand-accent: #5170ff;  /* Color de contraste (Azul) para resaltar elementos */
+    --brand-vrt: rgb(255, 77, 77);
     --brand-gradient: linear-gradient(135deg, #ff971c, #c65d36); /* Color gradiente para CTA*/
 
     /* Alias semánticos */
@@ -471,7 +472,7 @@ li {
 .aside__filters { 
     display: flex;
     flex-flow: column nowrap;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .filter-group {
@@ -517,6 +518,8 @@ li {
 }
 
 .card {
+    max-width: 350px;
+    width: 100%;
     background: var(--bg-secondary);
     border-radius: var(--border-radius);
     overflow: hidden;
@@ -524,14 +527,14 @@ li {
     transition: all 300ms ease;
 }
 
-.card:hover { box-shadow: 0 20px 40px rgba(241, 241, 241, 0.1); }
+.card:hover { box-shadow: 0 20px 40px rgba(241, 241, 241, 0.2); }
 
 /* Banner Superior */
 .card-banner {
     min-height: 150px;
     padding: 1rem;
     background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.8)), 
-              url(/media/backgrounds/Toji-background.PNG) center/cover;
+        url(/media/backgrounds/Toji-background.PNG) center/cover;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
@@ -546,6 +549,8 @@ li {
     border-radius: var(--border-radius);
     border: 1px solid rgba(255,215,0,0.3);
     font-weight: bold;
+    text-transform: uppercase;
+    font-size: .75rem;
 }
 
 /* Contenido */
@@ -559,25 +564,31 @@ li {
 .tags {
     display: flex;
     gap: .625rem;
+    text-transform: uppercase;
+
 }
 
 .tag {
-  padding: 6px 12px;
-  border-radius: var(--border-radius);
-  font-size: 0.8rem;
+    padding: 6px 12px;
+    border-radius: var(--border-radius);
+    font-size: 0.8rem;
 }
 
 .gym {
     background-color: rgba(0, 110, 255, 0.2);
     color: var(--brand-accent);
-    text-transform: uppercase;
     font-weight: 700;
 }
 
 .calisthenics {
     background-color: rgba(255, 154, 60, 0.2);
     color: var(--brand-soft);
-    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.versatil {
+    background-color: rgba(255, 77, 77, 0.2);;
+    color: var(--brand-vrt);
     font-weight: 700;
 }
 
@@ -592,6 +603,7 @@ li {
     background: rgba(255,255,255,0.03);
     padding: 10px;
     border-radius: var(--border-radius);
+    text-transform: uppercase;
 }
 
 .stat-header {
@@ -606,9 +618,9 @@ li {
 }
 
 .progress {
-  height: 100%;
-  background: var(--brand-primary);
-  box-shadow: 0 0 8px var(--brand-primary);
+    height: 100%;
+    background: var(--brand-primary);
+    box-shadow: 0 0 8px var(--brand-primary);
 }
 
 
