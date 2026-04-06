@@ -1,0 +1,43 @@
+
+Objeto:
+
+    bibliotecaRutina {
+
+        rutina[] //Atributo - Obejeto Array de rutinas
+
+    } metodos {
+        CRUD // No es necesario para el proyecto, pero podria estar en una version posterior
+        buscarPorNombre(nombre) // Buscador por nombre 
+        filtrarPorParametros(enfoque, dificultad, modalidad) 
+        mostrarPreviews()  // Emtrega nombre, enfoque, dificultad y modalidad de todas las rutinas (Asumo que sera en forma de Array), para crear todas las tarjetas de rutina
+    }
+
+    Este objeto se usa en la seccion 'Biblioteca Rutinas' en la web, compuesto por un buscador y cada una de las rutinas presentadas en una tarjeta.
+
+    rutina {
+
+        id // Para el CRUD
+        nombre
+        enfoque[] 
+        dificultad
+        modalidad[]
+        implementos[]
+        descripcion
+        ejerciciosRutina[]
+    } metodos {
+        mostrarInfo()
+    }
+
+    Este objeto se usa en la seccion individual y completa de cada rutina. Por ende lo que buscamos es solo mostrar los datos.
+
+    Pienso que el array 'ejercicioRutina' tal vez podria ser un objeto, o un array de dimensiones, la idea es que aqui se almacene el ejercicio en formato " Ejercicio// Sets // Reps " creando una tabla en el html de la web
+
+
+
+    Nota: En una version posterior, se piensa agregar el sistema CRUD. No se agrega en esta version porque no es necesario, la app solo es de visualizacion y gestionamiento sencillo, si el administrador desea agregar algo, lo hace desde el codigo.
+
+    El CRUD esta previsto para una version mas interactiva, donde los usuarios puedan crear sus propias rutinas y compartirlas.
+
+    Notese que el Proyecto es una "APP WEB", no una 'APP'
+
+    

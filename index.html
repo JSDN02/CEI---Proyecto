@@ -1,0 +1,178 @@
+<!--
+Descripción: Este archivo "index.html" contiene la pagina principal de la web.
+Estructura general:
+- Encabezado
+    - Barra de navegación
+    - Sección Hero
+- 
+- 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <title>Graziano Fit</title>
+</head>
+
+<body>
+    <!--
+    Sección de Encabezado
+    Descripción: En esta sección tenemos el encabezado (Nav + Hero) ...
+    -->
+    <header class="main-header">
+        <!-- Navegación -->
+        <nav class="section navigation">
+            <div class="container navigation__block">
+                <div class="logo">
+                    <a href="#" aria-label="Inicio">Graziano <span class="text-brand-soft">Fit</span></a>
+                </div>
+                <ul class="navbar">
+                    <li class="navbar-item"><a href="#" class="active" aria-label="Inicio">Inicio</a></li>
+                    <li class="navbar-item"><a href="rutinas.html" aria-label="Rutinas">Rutinas</a></li>
+                    <li class="navbar-item"><a href="ejercicios.html" aria-label="Ejercicio">Ejercicios</a></li>
+                    <li class="navbar-item"><a href="actividad.html" aria-label="Actividad">Actividad</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Banner Hero -->
+        <section class="section hero">
+            <div class="container hero__block">
+                <div class="hero__text">
+                    <h1>Stay <span class="text-gradient">Hard</span></h1>
+                    <p class="text-phrase">Entrena como los personajes más fuertes del anime</p>
+                </div>
+            </div>
+        </section>
+    </header>
+    <!--
+    Sección de Encabezado (Final)
+    -->
+
+    <!--
+    Sección de Rutinas
+    Descripción: En esta sección tenemos la presentacion para la sección de rutinas y su acceso
+    -->
+    <section class="section feature">
+        <div class="container feature__block">
+            <div class="feature__content">
+                <h2>Rutinas de <br> entrenamiento</h2>
+                <p>Programas inspirados en los personajes más fuertes del <b>anime</b>. <br>
+                    Desarrolla <b>fuerza</b>, <b>resistencia</b> y <b>disciplina</b> con rutinas estructuradas.</p>
+                <a href="#" class="btn btn-gradient">Explorar rutinas</a>
+                <div class="feature__stats">
+                    <div class="stat">
+                        <span class="text-display text-brand-soft">12+</span>
+                        <p>Rutinas</p>
+                    </div>
+                    <div class="stat">
+                        <span class="text-display">3</span>
+                        <p>Dificultades</p>
+                    </div>
+                    <div class="stat">
+                        <span class="text-display">4-6</span>
+                        <p>Semanas</p>
+                    </div>
+                </div>
+            </div>
+            <img src="media/personajes/danielPark.webp" alt="danielParkImageFeature" class="img-character">
+        </div>
+    </section>
+    <!--
+    Sección de Rutinas (Final)
+    -->
+
+    <!--
+    Sección de Ejercicios
+    Descripción: En esta sección tenemos la presentacion para la sección de ejercicios y su acceso
+    Nota: Comparte clases con la sección.
+    -->
+    <section class="section feature">
+        <div class="container feature__block">
+            <img src="media/personajes/zackLee.webp" alt="zackLeeImageFeature" class="img-character">
+            <div class="feature__content">
+                <h2>Ejercicios prácticos</h2>
+                <p>Aquí encontrarás todos los ejercicios de cada rutina explicados a
+                    profundidad para que <b>comprendas perfectamente</b> cada uno.</p>
+                <a href="#" class="btn btn-gradient">Ver ejercicios</a>
+                <div class="feature__stats">
+                    <div class="stat">
+                        <span class="text-display text-brand-soft">30+</span>
+                        <p>Ejercicios</p>
+                    </div>
+                    <div class="stat">
+                        <span class="text-display">3</span>
+                        <p>Explicaciones</p>
+                    </div>
+                    <div class="stat">
+                        <span class="text-display">4-6</span>
+                        <p>Variaciones</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--
+    Sección de Ejercicios (Final)
+    -->
+
+    <!--
+    Sección Footer
+    Descripción: En esta sección tenemos la notas del pie de pagina
+    -->
+    <footer class="section footer">
+        <div class="container footer__block">
+            <div class="footer__info">
+                <div class="logo">
+                    <a href="#">Graziano <span class="text-brand-soft">Fit</span></a>
+                </div>
+                <p>Lleva tu cuerpo al siguiente nivel con la disciplina del anime.</p>
+            </div>
+
+            <div class="footer__nav">
+                <div class="footer-navigation">
+                    <h4>Explorar</h4>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="rutinas.html">Rutinas</a></li>
+                        <li><a href="ejercicios.html">Ejercicios</a></li>
+                        <li><a href="actividad.html">Actividad</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__social">
+                <h4>Comunidad</h4>
+                <div class="social-links">
+                    <a href="https://www.youtube.com/@santigraziano" target="_blank" aria-label="Youtube"
+                        rel="noopener noreferrer">
+                        <i class="ri-youtube-fill"></i>
+                    </a>
+                    <a href="https://discord.gg/7jkKCjAxfK" target="_blank" aria-label="Discord"
+                        rel="noopener noreferrer">
+                        <i class="ri-discord-fill"></i>
+                    </a>
+                    <a href="#" target="_blank" aria-label="Instagram" rel="noopener noreferrer">
+                        <i class="ri-instagram-fill"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class=" container footer__bottom">
+            <p>&copy; 2024 Graziano Fit. Todos los derechos reservados.</p>
+            <div class="footer__bottom-phrase">
+                <span class="text-gradient st-footer">Stay Hard</span>
+                <p>Entrena como los personajes más fuertes</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

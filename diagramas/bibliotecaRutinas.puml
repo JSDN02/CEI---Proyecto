@@ -1,0 +1,30 @@
+@startuml
+title Sistema de Biblioteca Simple
+
+class Libro {
+    -titulo: String
+    -autor: String
+    -ISBN: String
+    +prestar(): void
+    +devolver(): void
+}
+
+class Usuario {
+    -nombre: String
+    -id: int
+    +tomarPrestado(libro: Libro): void
+    +devolverLibro(libro: Libro): void
+}
+
+class Biblioteca {
+    -libros: List<Libro>
+    -usuarios: List<Usuario>
+    +agregarLibro(libro: Libro): void
+    +registrarUsuario(usuario: Usuario): void
+}
+
+Usuario --> Libro : "toma prestado"
+Biblioteca "1" -- "*" Libro
+Biblioteca "1" -- "*" Usuario
+
+@enduml

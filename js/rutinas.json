@@ -1,0 +1,130 @@
+{
+  "rutinas": [
+    
+    {
+      "id": "protocolo-itadori-001",
+      "titulo": "El Despertar del Recipiente: Protocolo de Entrenamiento Itadori Yuji",
+      "descripcion": "Esta guía de entrenamiento está diseñada para emular la versatilidad física y la potencia explosiva de Yuji Itadori. A través de una estructura de cuerpo completo (Full Body), buscaremos optimizar la respuesta neuromuscular y fomentar una adaptación física integral.",
+      "ficha_tecnica": {
+        "nombre": "Rutina Itadori Yuji ",
+        "enfoque": ["Resistencia muscular", "Fuerza base", "Hipertrofia funcional"],
+        "dificultad": "Principiante (6-12 meses de experiencia)",
+        "modalidad": "Versátil (Gimnasio o Calistenia)",
+        "duracion_estimada": "60 - 75 min",
+        "implementos": {
+          "gym": ["Rack de pesas", "Barras", "Poleas", "Máquinas de aislamiento"],
+          "calistenia": ["Barra de dominadas", "Banco o superficie elevada", "Espacio despejado"]
+        },
+        "metodologia": "Sobrecarga Progresiva y control del TUT (Time Under Tension)."
+      },
+      "conceptos_clave": [
+        {
+          "termino": "Sobrecarga Progresiva",
+          "definicion": "Proceso sistemático de aumentar peso, volumen o calidad técnica para inducir adaptaciones a largo plazo."
+        },
+        {
+          "termino": "Tiempo Bajo Tensión (TUT)",
+          "rangos": [
+            { "tipo": "Corto", "segundos": "0-20s", "objetivo": "Potencia y velocidad" },
+            { "tipo": "Moderado", "segundos": "20-40s", "objetivo": "Fuerza e hipertrofia" },
+            { "tipo": "Prolongado", "segundos": "30-60s", "objetivo": "Resistencia y control motor" }
+          ]
+        }
+      ],
+      "bloques": {
+        "gym": [
+          {
+            "dia": 1,
+            "foco": "Fundamento y Empuje",
+            "ejercicios": [
+              { "nombre": "Movilidad Articular / Soguita", "series": "X", "reps": "2 min", "descanso": "-", "tut": "-" },
+              { "nombre": "Press de Banca", "series": 3, "reps": "8 - 10", "descanso": "3 min", "tut": "0 - 20" },
+              { "nombre": "Jalón al Pecho", "series": 3, "reps": "10 - 12", "descanso": "2 min", "tut": "20 - 40" },
+              { "nombre": "Estocadas (Zancadas)", "series": 3, "reps": "10 - 12", "descanso": "2 min", "tut": "20 - 40" },
+              { "nombre": "Vuelos Laterales", "series": 3, "reps": "10 - 12", "descanso": "2 min", "tut": "30 - 60" },
+              { "nombre": "Sillón de Cuádriceps", "series": 3, "reps": "10 - 12", "descanso": "2 min", "tut": "20 - 40" },
+              { "nombre": "Curl de Bíceps (Mancuernas)", "series": 3, "reps": "8 - 10", "descanso": "2 min", "tut": "30 - 60" },
+              { "nombre": "Jalón de Tríceps (Polea)", "series": 3, "reps": "10 - 12", "descanso": "2 min", "tut": "30 - 60" },
+              { "nombre": "Sit Ups (Abdominales)", "series": 3, "reps": "12 - 15", "descanso": "1 min", "tut": "30 - 60" },
+              { "nombre": "Estiramiento Post-Entreno", "series": "X", "reps": "30s", "descanso": "-", "tut": "-" }
+            ]
+          },
+          {
+            "dia": 2,
+            "foco": "Potencia y Estabilidad",
+            "ejercicios": [
+              { "nombre": "Sentadilla en Smith", "series": 3, "reps": "8 - 10", "descanso": "3 min", "tut": "0 - 20" },
+              { "nombre": "Press de Banca (Mancuernas)", "series": 3, "reps": "10 - 12", "descanso": "3 min", "tut": "20 - 40" },
+              { "nombre": "Prensa de Piernas", "series": 3, "reps": "10 - 12", "descanso": "2 min", "tut": "20 - 40" },
+              { "nombre": "Remo en Máquina Sentado", "series": 3, "reps": "10 - 12", "descanso": "2 min", "tut": "20 - 40" },
+              { "nombre": "Fondos de Tríceps", "series": 3, "reps": "10 - 12", "descanso": "2 min", "tut": "30 - 60" },
+              { "nombre": "Curl Martillo", "series": 2, "reps": "8 - 12", "descanso": "2 min", "tut": "30 - 60" },
+              { "nombre": "Elevación de Piernas (Acostado o Colgado)", "series": 3, "reps": "12 - 15", "descanso": "1 min", "tut": "30 - 60" },
+              { "nombre": "Estiramiento Post-Entreno", "series": "X", "reps": "30s", "descanso": "-", "tut": "-" }
+            ]
+          },
+          {
+            "dia": 3,
+            "foco": "Tracción y Cadena Posterior",
+            "ejercicios": [
+              { "nombre": "Peso Muerto Rumano", "series": 3, "reps": "8 - 10", "descanso": "3 min", "tut": "0 - 20" },
+              { "nombre": "Dominadas", "series": 3, "reps": "8 - 10", "descanso": "3 min", "tut": "20 - 40" },
+              { "nombre": "Curl de Isquios", "series": 3, "reps": "12 - 15", "descanso": "2 min", "tut": "20 - 40" },
+              { "nombre": "Press Inclinado (Mancuernas)", "series": 3, "reps": "10 - 12", "descanso": "2 min", "tut": "20 - 40" },
+              { "nombre": "Vuelos Laterales (Polea Baja)", "series": 3, "reps": "12 - 15", "descanso": "2 min", "tut": "30 - 60" },
+              { "nombre": "Curl de Bíceps (Barra)", "series": 2, "reps": "10 - 12", "descanso": "2 min", "tut": "30 - 60" },
+              { "nombre": "Sit Ups", "series": 3, "reps": "12 - 15", "descanso": "1 min", "tut": "30 - 60" },
+              { "nombre": "Estiramiento Post-Entreno", "series": "X", "reps": "30s", "descanso": "-", "tut": "-" }
+            ]
+          }
+        ],
+        "calistenia": [
+          {
+            "dia": 1,
+            "foco": "Resistencia Básica",
+            "ejercicios": [
+              { "nombre": "Flexiones de Brazos", "series": 3, "reps": "8 - 12", "descanso": "3 min", "tut": "0 - 20" },
+              { "nombre": "Estocadas", "series": 3, "reps": "10 - 12", "descanso": "2 min", "tut": "20 - 40" },
+              { "nombre": "Dominadas", "series": 3, "reps": "8 - 10", "descanso": "3 min", "tut": "0 - 20" },
+              { "nombre": "Sentadillas", "series": 3, "reps": "8 - 12", "descanso": "2 min", "tut": "20 - 40" },
+              { "nombre": "Dominadas Australianas", "series": 3, "reps": "10 - 12", "descanso": "2 min", "tut": "20 - 40" },
+              { "nombre": "Fondos en Banco", "series": 3, "reps": "12 - 15", "descanso": "2 min", "tut": "20 - 40" },
+              { "nombre": "Crunches Abdominales", "series": 3, "reps": "12 - 15", "descanso": "1 min", "tut": "30 - 60" },
+              { "nombre": "Estiramiento Post-Entreno", "series": "X", "reps": "30s", "descanso": "-", "tut": "-" }
+            ]
+          },
+          {
+            "dia": 2,
+            "foco": "Explosividad y Control",
+            "ejercicios": [
+              { "nombre": "Sentadillas con Salto", "series": 3, "reps": "8 - 12", "descanso": "3 min", "tut": "0 - 20" },
+              { "nombre": "Flexiones (Pausa 2s abajo)", "series": 3, "reps": "8 - 10", "descanso": "3 min", "tut": "20 - 40" },
+              { "nombre": "Sentadilla Pistola (Asistida)", "series": 3, "reps": "6 - 8", "descanso": "3 min", "tut": "0 - 20" },
+              { "nombre": "Remo Invertido", "series": 3, "reps": "10 - 12", "descanso": "2 min", "tut": "20 - 40" },
+              { "nombre": "Flexiones en Pica (Pike)", "series": 3, "reps": "8 - 10", "descanso": "2 min", "tut": "20 - 40" },
+              { "nombre": "Fondos en Banco", "series": 3, "reps": "12 - 15", "descanso": "2 min", "tut": "20 - 40" },
+              { "nombre": "Elevación de Piernas", "series": 3, "reps": "12 - 15", "descanso": "1 min", "tut": "30 - 60" },
+              { "nombre": "Estiramiento Post-Entreno", "series": "X", "reps": "30s", "descanso": "-", "tut": "-" }
+
+            ]
+          },
+          {
+            "dia": 3,
+            "foco": "Integración Final",
+            "ejercicios": [
+              { "nombre": "Burpees", "series": 3, "reps": "8 - 12", "descanso": "3 min", "tut": "0 - 20" },
+              { "nombre": "Dominadas Supinas", "series": 3, "reps": "8 - 10", "descanso": "3 min", "tut": "20 - 40" },
+              { "nombre": "Flexiones Diamante", "series": 3, "reps": "8 - 10", "descanso": "3 min", "tut": "0 - 20" },
+              { "nombre": "Puente de Glúteos", "series": 3, "reps": "12 - 15", "descanso": "2 min", "tut": "30 - 60" },
+              { "nombre": "Flexiones Declinadas", "series": 3, "reps": "10 - 12", "descanso": "2 min", "tut": "20 - 40" },
+              { "nombre": "Australianas (Pausa 2s)", "series": 3, "reps": "10 - 12", "descanso": "2 min", "tut": "30 - 60" },
+              { "nombre": "Crunches", "series": 3, "reps": "12 - 15", "descanso": "1 min", "tut": "30 - 60" },
+              { "nombre": "Estiramiento Post-Entreno", "series": "X", "reps": "30s", "descanso": "-", "tut": "-" }
+            ]
+          }
+        ]
+      },
+      "notas": "La técnica precede a la intensidad. Asegura una hidratación adecuada y control motor."
+    }
+  ]
+}

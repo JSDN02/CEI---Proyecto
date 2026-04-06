@@ -1,0 +1,731 @@
+/*---------------------------------------------------------------------------*\
+index.css
+- Variables
+- Reset / Normalizar
+- Texto
+- Componentes
+- Header
+- Feature
+\*---------------------------------------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* ==========================================================================
+    VARIABLES
+   ========================================================================== */
+:root {
+    /* Fondos */
+    --bg-primary: #101010;    /* Fondo principal (casi negro) */
+    --bg-secondary: #151515;  /* Superficies secundarias (tarjetas, inputs) */
+    --bg-tertiary: #1f1f1f;   /* Elevaciones o estados hover en elementos oscuros */
+    --bg-light: #f1f1f1;      /* Fondo claro para secciones de alto contraste */
+
+    /* Destacados */
+    --brand-primary: #ff7a00; /* Color corporativo principal (Naranja) */
+    --brand-soft: #ff9a3c;    /* Versión suavizada del color principal */
+    --brand-accent: #5170ff;  /* Color de contraste (Azul) para resaltar elementos */
+    --brand-gradient: linear-gradient(135deg, #ff971c, #c65d36); /* Color gradiente para CTA*/
+
+    /* Alias semánticos */
+    --action-hover: var(--brand-primary);  /* Color al pasar el ratón por acciones */
+    --action-contrast: var(--brand-accent); /* Color para llamadas a la acción secundarias */
+    --brand-gradient-hover: linear-gradient(135deg, #c65d36, #ff971c); /* CTA Hover*/
+
+    /* Fuentes: */
+    --text-dark: var(--bg-primary);         /* Alias semantico - Color de texto oscuro */
+    --text-light: var(--bg-light);         /* Alias semantico - Color de texto claro */
+    --font-main: "Inter", sans-serif;          /* Fuente principal para lectura y UI */
+    --font-accent: "Cormorant Garamond", serif; /* Fuente elegante para citas */
+
+    /* Width */
+    --max-width: 1380px;    /* Ancho máximo estándar del contenido */
+
+    /* Spacing */
+    --padding-inline: 1rem;   /* Espaciado lateral de seguridad en el viewport */
+    --padding-btn: 0.75rem 0;  /* Relleno estándar para botones (Vertical Horizontal) */
+
+    /* Border */
+    --border-radius: .3125rem;
+    --border-line: 1px solid rgba(241, 241, 241, 0.2);
+}
+
+/* ==========================================================================
+    RESET CSS
+    Descripción: Reset de estilos predefinidos.
+    Estructura:
+        - *
+        - body
+        - a
+        - img
+        - li
+   ========================================================================== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-light);
+    font-family: var(--font-main);
+}
+
+a { color: inherit; text-decoration: none; }
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    height: auto;
+    display: block;
+    font-style: italic;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font: inherit;
+    color: inherit;
+}
+
+input, select { font-family: var(--font-main); }
+
+/* ==========================================================================
+    TEXTO
+    Descripción: Componentes.
+    Estructura:
+        - h1, .h1
+        - h1-standard
+        - h2, .h2
+        - h3, .h3
+        - h4, .h4
+        - .text-phrase
+        - p, .p
+        - li
+        - .text-display
+        - .logo
+        - .btn
+        - .text-brand
+        - .text-brand-soft
+        - .text-gradient
+   ========================================================================== */
+
+h1, .h1, .h1-standard, .text-display, h2, .h2, .logo, .btn, .st-footer {
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+h1, .h1 {
+    font-size: clamp(3.5rem, 12vw, 9rem);
+    letter-spacing: -0.03em;
+    line-height: 0.9;
+}
+
+.h1-standard {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    letter-spacing: 0rem;
+    line-height: 1;
+}
+
+.text-display { font-size: clamp(1.5rem, 4vw, 2rem); }
+
+h2, .h2 { font-size: clamp(1.75rem, 5vw, 2.375rem); }
+
+h3, .h3 { font-weight: 700; font-size: clamp(1.4rem, 3.5vw, 1.75rem); text-transform: uppercase;}
+
+h4, .h4 { font-weight: 600; font-size: clamp(1.1rem, 2.5vw, 1.25rem); text-transform: uppercase;}
+
+.text-phrase { font-family: var(--font-accent); font-size: clamp(1.15rem, 3vw, 1.5625rem); }
+
+.text-phrase-big {
+    font-family: var(--font-accent);
+    font-size: clamp(1.15rem, 3vw, 3rem);
+    font-weight: 900;
+    font-style: italic;
+}
+
+p, .p {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+li {
+    list-style: none;
+    font-weight: 700;
+    font-size: .875rem;
+    text-transform: uppercase;
+}
+
+
+.logo { font-style: italic; font-size: 1.25rem; }
+
+.text-brand { color: var(--brand-primary); }
+
+.text-brand-soft { color: var(--brand-soft); }
+
+.text-gradient {
+    color: var(--brand-primary); /* fallback */
+    padding: .25rem;
+    background: var(--brand-gradient);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    -webkit-background-clip: text;
+    background-clip: text ;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================================================
+    COMPONENTES
+    Descripción: Componentes.
+    Estructura:
+        - section
+        - container
+        - .btn
+        - .btn:hover
+        - .btn::before
+        - .btn:hover::before
+   ========================================================================== */
+.section { width: 100%; padding-block: 4rem; }
+
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin-inline: auto;
+    padding-inline: var(--padding-inline); 
+}
+
+.btn {
+    padding: var(--padding-btn);
+    width: 100%;
+    border-radius: var(--border-radius);
+    font-size: 1rem; 
+    color: var(--text-dark);
+    text-align: center; 
+    letter-spacing: 1px; 
+    
+    transition: 300ms ease;
+    isolation: isolate;
+    position: relative;
+}
+
+.btn-card { font-size: 12px;}
+
+.btn:hover { transform: translateY(-0.1875rem); }
+
+.btn-filter { background-color: var(--brand-accent); }
+
+.btn-download { color: var(--brand-accent); }
+
+.btn-gradient { background: var(--brand-gradient); }
+
+/* Efecto Hover Gradient */
+.btn-gradient::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* Cubre todo el botón */
+    background: var(--brand-gradient-hover); 
+    opacity: 0;
+    border-radius: var(--border-radius);
+    z-index: -1; /* Se sitúa entre el fondo original y el texto */
+    transition: opacity 300ms ease;
+}
+
+.btn-gradient:hover::before {
+    opacity: 1; 
+    filter: brightness(1.25) saturate(1.1);
+}
+
+/* ==========================================================================
+    SECCION PRINCIPAL (NAVEGACION)
+    Descripción: Estilos para la navegacion.
+    Estructura:
+        - .main-header
+        - .navigation
+        - .navigation__block
+        - .logo
+        - .navbar
+        - .navbar-item
+        - .navbar-item:hover
+        - .active
+        - .active:hover
+   ========================================================================== */
+
+.main-header {
+    position: relative;
+    overflow: hidden;
+}
+
+.navigation {
+    padding-block: 1rem;
+    width: 100%;
+}
+.navigation__block {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.logo { flex: 0 0 auto; }
+
+.navbar {
+    flex: 0 0 40%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+
+.navbar-item { transition: color 300ms ease; }
+
+.navbar-item:hover { color: var(--brand-soft);}
+
+
+@keyframes fadeInActive {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.active {
+    padding: .5rem 1rem;
+    color: var(--text-dark);
+    background: var(--brand-gradient-hover);
+    border-radius: var(--border-radius);
+    transition: all 300ms ease;
+
+    animation: fadeInActive 0.4s ease-out; 
+}
+
+.active:hover { filter: brightness(1.15) saturate(1.1); }
+
+/* ==========================================================================
+    SECCION PRINCIPAL (HERO)
+    Descripciön: Estilos para el hero.
+    Estructura:
+        - .hero
+        - .hero__block
+        - .hero__text
+   ========================================================================== */
+.hero {
+    height: 93vh;
+    aspect-ratio: 16 / 9;
+    background-image: linear-gradient(to top, #000000, transparent), url('/media/backgrounds/tojiFushiguroTemporal.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+}
+
+.hero-routine {
+    height: 60vh;
+    aspect-ratio: 16 / 9;
+    background-image: linear-gradient(to top, #000000, transparent), url('/media/backgrounds/itadoriYuji.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+
+    width: calc(100% - 2rem);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: var(--border-radius);
+    padding: 1rem;
+
+}
+
+.hero__block {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+
+    position: relative;
+    height: 100%;
+}
+
+.hero__text {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+/* ==========================================================================
+    SECCION DE CARACTERÍSTICAS
+    Descripción: Estilos de la seccion de característica.
+    Estructura:
+        - feature__block
+        - feature__content
+        - .feature__stats
+        - .feature__stats > *:nth-child(2)
+        - .stats
+        - .img-character
+        - .footer__bottom
+        - .footer__bottom span
+        - .footer__bottom-phrase
+   ========================================================================== */
+
+.feature__block {
+    padding: 3rem 3rem;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 4rem;
+}
+.feature__content {
+    flex: 1 1 300px;
+    min-width: 300px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 32px;
+}
+
+/* Feature Stats ========================================================================== */
+.feature__stats {
+    display: flex;
+    flex-flow: row nowrap; 
+    justify-content: space-between;
+    align-items: stretch;
+    
+    border-top: var(--border-line);
+    border-bottom: var(--border-line);
+    
+    padding-block: 1.5rem;
+    margin-block: 2rem;
+    width: 100%;
+}
+
+.stat {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-inline: 0.5rem;
+
+
+    border-left: var(--border-line)
+}
+
+.stat:first-child {
+    border-left: none;
+}
+
+.stat p {
+    text-transform: uppercase;
+}
+
+/* Img Character ========================================================================== */
+.img-character {
+    flex: 1 1 300px;
+    max-height: 610px;
+    min-width: 300px;
+
+  /* --- El efecto de difuminado inferior --- */
+    -webkit-mask-image: linear-gradient(to bottom, var(--bg-primary) 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, var(--bg-primary) 70%, transparent 100%);
+}
+/* ==========================================================================
+    SECCION DE CONTENT (RUTINAS Y EJERCICIOS) (PARTE 1)
+    Descripción: Estilos de la seccion de aside.
+    Estructura:
+        - .main-content
+        - .aside
+        - .aside__nav
+        - .aside__nav a
+        - .aside__nav a.active
+        - .filter-group
+        - .filter-group
+        - .filter-group input[type="text"]
+        - .filter-group select
+        - .checkbox-list
+        - .btn-filter
+   ========================================================================== */
+.main-content { display: flex;}
+
+.aside {
+    flex: 0 0 300px; 
+    padding: 2rem 1.5rem;
+    border-right: var(--border-line);
+    background-color: var(--bg-secondary);
+    
+    /* Magia */
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto; /* Scroll interno si los filtros no caben */
+}
+
+.aside__block {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.aside__filters { 
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2rem;
+}
+
+.filter-group {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+}
+
+/* Estilos internos del Buscador */
+
+.filter-group input[type="text"],
+.filter-group select {
+    background-color: var(--bg-light);
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(241, 241, 241, 1);
+    outline: unset;
+    border-radius: var(--border-radius);
+}
+
+.checkbox-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+/* ==========================================================================
+    SECCION DE CONTENT (RUTINAS Y EJERCICIOS) (PARTE 2)
+    Descripción: Estilos de la seccion de content.
+    Estructura:
+        - 
+   ========================================================================== */
+/* Sección de contenido */
+.content {
+    flex: 1;
+    padding-block: 1rem;
+}
+
+.content__grid {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    transition: all 300ms ease;
+}
+
+.card:hover { box-shadow: 0 20px 40px rgba(241, 241, 241, 0.1); }
+
+/* Banner Superior */
+.card-banner {
+    min-height: 150px;
+    padding: 1rem;
+    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.8)), 
+              url(/media/backgrounds/Toji-background.PNG) center/cover;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: start;
+    gap: 2rem;
+}
+
+.badge-pro {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 5px 12px;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255,215,0,0.3);
+    font-weight: bold;
+}
+
+/* Contenido */
+.card-content {
+    padding: 0.5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .625rem;
+}
+
+.tags {
+    display: flex;
+    gap: .625rem;
+}
+
+.tag {
+  padding: 6px 12px;
+  border-radius: var(--border-radius);
+  font-size: 0.8rem;
+}
+
+.gym {
+    background-color: rgba(0, 110, 255, 0.2);
+    color: var(--brand-accent);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.calisthenics {
+    background-color: rgba(255, 154, 60, 0.2);
+    color: var(--brand-soft);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* Barras de Progreso */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.stat-item {
+    background: rgba(255,255,255,0.03);
+    padding: 10px;
+    border-radius: var(--border-radius);
+}
+
+.stat-header {
+    font-size: 0.65rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.progress-bar {
+    height: 4px;
+    background: #333;
+}
+
+.progress {
+  height: 100%;
+  background: var(--brand-primary);
+  box-shadow: 0 0 8px var(--brand-primary);
+}
+
+
+/* ==========================================================================
+    SECCION DE FOOTER
+    Descripción: Estilos de la seccion de footer.
+    Estructura:
+        - .footer
+        - .footer__block
+        - .footer__info
+        - .footer__nav
+        - .footer .footer-navigation
+        - .footer ul
+        - .footer ul li
+        - .footer__social
+        - .social-links
+        - .social-links i
+        - .social-links i:hover
+        - .social-links i:active
+   ========================================================================== */
+.footer {
+    background-color: var(--bg-tertiary);
+    padding-block: 1rem;
+}
+
+.footer__block {
+
+    padding: 0.5rem 3rem;
+    display: flex;
+    flex-flow: row wrap;
+
+}
+
+.footer__info {
+    flex: 1 1 300px;
+}
+
+/* Footer Nav ========================================================================== */
+.footer__nav {
+    flex: 1 1 300px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+}
+
+.footer__nav .footer-navigation {
+    width: fit-content;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    gap: 1rem;
+}
+
+.footer__nav ul {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .5rem;
+}
+
+.footer__nav ul li {
+    text-transform: none;
+}
+
+/* Footer Social ========================================================================== */
+.footer__social {
+    flex: 1 1 300px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: end;
+    gap: 1rem;
+}
+
+.social-links {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem
+}
+
+.social-links i{
+    display: inline-block;
+    font-size: 1.75rem;
+    transition: all 300ms ease;
+}
+
+.social-links i:hover {
+    transform: scale(0.85);
+
+    background: var(--brand-gradient-hover);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    -webkit-background-clip: text ;
+    background-clip: text ;
+    -webkit-text-fill-color: transparent;
+}
+
+.social-links i:active { transform: scale(1.25); }
+
+/* Footer Bottom ========================================================================== */
+.footer__bottom {
+    padding: 0.5rem 3rem;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__bottom span { font-size: 1.75rem; }
+
+.footer__bottom-phrase {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: end;
+}
+
+
