@@ -21,6 +21,11 @@ async function cargarRutinas() {
         const data = await response.json();
         renderizarRutinas(data.rutinas);
 
+        // Pasar las rutinas al filtrador si está disponible
+        if (window.filtroRutinas) {
+            window.filtroRutinas.setRutinas(data.rutinas);
+        }
+
     } catch (error) {
         console.error("Error al cargar el protocolo:", error);
     }
@@ -68,7 +73,7 @@ function renderizarRutinas(rutinas) {
                 </section>
 
                 <footer class="card-action">
-                    <button class="btn btn-gradient btn-card ver-rutina" data-rutina-id="${rutina.card.enlace}">
+                    <button class="btn btn-gradient btn-card ver-rutina" data-rutina-id="${rutina.slug}">
                         VER RUTINA <i class="ri-arrow-right-fill"></i>
                     </button>
                     <a href="${rutina.card.descarga}" class="btn btn-download btn-card" target="_blank" rel="noopener">
@@ -90,7 +95,23 @@ function renderizarRutinas(rutinas) {
 document.addEventListener('DOMContentLoaded', cargarRutinas);
 
 function verDetalle(id) {
-    console.log("Navegando a la rutina:", id);
-    // Esta línea es la que hace la magia:
-    window.open(id, '_blank');
+    // Ajustado para entrar a la carpeta 'rutinas'
+    window.location.href = `rutinas/detalle.html?id=${id}`;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+function verDetalle(id) {
+    // Ajustado para entrar a la carpeta 'rutinas'
+    window.location.href = `rutinas/detalle.html?id=${id}`;
 }

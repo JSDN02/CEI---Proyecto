@@ -13,9 +13,11 @@ Estructura general:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="../css/index.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <script defer src="../js/customRutina.js"></script>
+    <script defer src="../js/accordion.js"></script>
     <title>Graziano Fit</title>
 </head>
 
@@ -29,23 +31,16 @@ Estructura general:
         <nav class="section navigation">
             <div class="container navigation__block">
                 <div class="logo">
-                    <a href="#" aria-label="Inicio">Graziano <span class="text-brand-soft">Fit</span></a>
+                    <a href="../index.html" aria-label="Inicio">Graziano <span class="text-brand-soft">Fit</span></a>
                 </div>
-                <ul class="navbar">
-                    <li class="navbar-item"><a href="index.html" aria-label="Inicio">Inicio</a></li>
-                    <li class="navbar-item"><a href="rutinas.html"  aria-label="Rutinas">Rutinas</a></li>
-                    <li class="navbar-item"><a href="ejercicios.html" aria-label="Ejercicio">Ejercicios</a></li>
-                    <li class="navbar-item"><a href="actividad.html" class="active" aria-label="Actividad">Actividad</a></li>
-                </ul>
             </div>
         </nav>
 
         <!-- Banner Hero -->
-        <section class="section hero">
-            <div class="container hero__block">
-                <div class="hero__text">
-                    <h1>Stay <span class="text-gradient">Hard</span></h1>
-                    <p class="text-phrase">Entrena como los personajes más fuertes del anime</p>
+        <section class="section hero hero-detalle">
+            <div class="container hero__block-detalle">
+                <div class="hero__text-detalle">
+                    <!-- Contenido dinámico -->
                 </div>
             </div>
         </section>
@@ -54,6 +49,31 @@ Estructura general:
     Sección de Encabezado (Final)
     -->
 
+    <!--
+    Sección de Rutina
+    -->
+    <section class="section training">
+        <div class="container training__block">
+
+            <article class="training__content">
+                <!-- Contenido dinámico de descripción -->
+            </article>
+
+            <article class="training__content">
+                <!-- Contenido dinámico de conceptos -->
+            </article>
+        </div>
+    </section>
+
+    <section class="section detail">
+        <div class="container detail__block">
+            <div id="detalle-container-tablas">
+                <!-- Tablas dinámicas -->
+            </div>
+
+            <p id="nota-final"><!-- Nota dinámica --></p>
+        </div>
+    </section>
 
     <!--
     Sección Footer
@@ -73,9 +93,8 @@ Estructura general:
                     <h4>Explorar</h4>
                     <ul>
                         <li><a href="#">Inicio</a></li>
-                        <li><a href="#">Rutinas</a></li>
-                        <li><a href="#">Ejercicios</a></li>
-                        <li><a href="#">Actividad</a></li>
+                        <li><a href="rutinas.html">Rutinas</a></li>
+                        <li><a href="ejercicios.html">Ejercicios</a></li>
                     </ul>
                 </div>
             </div>
@@ -91,7 +110,7 @@ Estructura general:
                         rel="noopener noreferrer">
                         <i class="ri-discord-fill"></i>
                     </a>
-                    <a href="#" target="_blank" aria-label="Instagram" rel="noopener noreferrer">
+                    <a href="#" target="_blank" aria-label="Instagram">
                         <i class="ri-instagram-fill"></i>
                     </a>
                 </div>

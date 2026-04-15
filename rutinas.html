@@ -16,7 +16,8 @@ Estructura general:
     <link rel="stylesheet" href="css/index.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-    <script defer src="js/rutinas.js"></script>
+    <script defer src="js/forEachRutina.js"></script>
+    <script defer src="js/filtrador.js"></script>
     <title>Graziano Fit</title>
 </head>
 
@@ -36,7 +37,6 @@ Estructura general:
                     <li class="navbar-item"><a href="index.html" aria-label="Inicio">Inicio</a></li>
                     <li class="navbar-item"><a href="rutinas.html" class="active" aria-label="Rutinas">Rutinas</a></li>
                     <li class="navbar-item"><a href="ejercicios.html" aria-label="Ejercicio">Ejercicios</a></li>
-                    <li class="navbar-item"><a href="actividad.html" aria-label="Actividad">Actividad</a></li>
                 </ul>
             </div>
         </nav>
@@ -56,7 +56,7 @@ Estructura general:
 
     <!--
     Sección de Aside
-    Descripción: En esta sección la barra de busqueda lateral ...
+    Descripción: Panel de filtrado y búsqueda de rutinas
     -->
     <main class="main-content">
         <aside class="aside">
@@ -65,40 +65,87 @@ Estructura general:
                     <h2 class="h3">Filtrador de rutinas</h2>
                 </div>
 
-                <form class="aside__filters">
+                <form class="aside__filters" name="filtroRutinas">
+                    <!-- Búsqueda por nombre -->
                     <div class="filter-group">
-                        <label for="name" class="label-title h4">Buscador por Nombre</label>
-                        <input type="text" id="name" placeholder="Ej: Hipertrofia pierna...">
+                        <label for="filterName" class="label-title h4">
+                            <i class="ri-search-line"></i> Buscar por nombre
+                        </label>
+                        <input 
+                            type="text" 
+                            id="filterName" 
+                            placeholder="Ej: Itadori, Sung Jin-Woo..."
+                            aria-label="Buscar rutina por nombre"
+                        >
                     </div>
 
+                    <!-- Filtro por Enfoque -->
                     <div class="filter-group">
-                        <label class="label-title h4">Enfoque</label>
+                        <label class="label-title h4">
+                            <i class="ri-focus-2-line"></i> Enfoque
+                        </label>
                         <div class="checkbox-list">
-                            <label><input type="checkbox" value="fuerza"> Fuerza</label>
-                            <label><input type="checkbox" value="resistencia"> Resistencia</label>
-                            <label><input type="checkbox" value="flexibilidad"> Flexibilidad</label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="enfoque" value="Fuerza" aria-label="Filtrar por Fuerza">
+                                <span>Fuerza</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="enfoque" value="Resistencia" aria-label="Filtrar por Resistencia">
+                                <span>Resistencia</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="enfoque" value="Hipertrofia" aria-label="Filtrar por Hipertrofia">
+                                <span>Hipertrofia</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="enfoque" value="Explosividad" aria-label="Filtrar por Explosividad">
+                                <span>Explosividad</span>
+                            </label>
                         </div>
                     </div>
 
+                    <!-- Filtro por Dificultad -->
                     <div class="filter-group">
-                        <label for="difficulty" class="label-title h4">Dificultad</label>
-                        <select id="difficulty">
-                            <option value="all">Todas</option>
+                        <label for="filterDifficulty" class="label-title h4">
+                            <i class="ri-level-line"></i> Dificultad
+                        </label>
+                        <select 
+                            id="filterDifficulty"
+                            aria-label="Seleccionar dificultad de rutinas"
+                        >
+                            <option value="all">Todas las dificultades</option>
                             <option value="beg">Principiante</option>
                             <option value="int">Intermedio</option>
                             <option value="adv">Avanzado</option>
                         </select>
                     </div>
 
+                    <!-- Filtro por Modalidad -->
                     <div class="filter-group">
-                        <label class="label-title h4">Modalidad</label>
+                        <label class="label-title h4">
+                            <i class="ri-building-line"></i> Modalidad
+                        </label>
                         <div class="checkbox-list">
-                            <label><input type="checkbox" value="gym"> Gimnasio</label>
-                            <label><input type="checkbox" value="home"> Casa / Calistenia</label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="modalidad" value="gym" aria-label="Filtrar rutinas de Gimnasio">
+                                <span>Gimnasio</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="modalidad" value="home" aria-label="Filtrar rutinas en Casa">
+                                <span>Casa / Calistenia</span>
+                            </label>
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-filter btn-card">Aplicar Filtros</button>
+                    <!-- Botones de acción -->
+                    <div class="filter-actions">
+                        <button type="button" class="btn btn-filter btn-card">
+                            <i class="ri-filter-3-line"></i> Aplicar Filtros
+                        </button>
+                        <button type="button" class="btn btn-reset btn-card">
+                            <i class="ri-refresh-line"></i> Limpiar
+                        </button>
+                    </div>
                 </form>
             </div>
         </aside>
@@ -185,7 +232,6 @@ Estructura general:
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="rutinas.html">Rutinas</a></li>
                         <li><a href="ejercicios.html">Ejercicios</a></li>
-                        <li><a href="actividad.html">Actividad</a></li>
                     </ul>
                 </div>
             </div>

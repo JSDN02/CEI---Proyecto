@@ -47,7 +47,8 @@ index.css
 
     /* Border */
     --border-radius: .3125rem;
-    --border-line: 1px solid rgba(241, 241, 241, 0.2);
+    --border-line: 1px solid rgb(241, 241, 241);
+    --border-lined: 1px solid rgba(241, 241, 241, 0.2);
 }
 
 /* ==========================================================================
@@ -276,8 +277,8 @@ li {
     flex: 0 0 40%;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
-    gap: 2rem;
+    justify-content: flex-end;
+    gap: 3rem;
 }
 
 
@@ -323,19 +324,13 @@ li {
 
 .hero-routine {
     height: 60vh;
-    aspect-ratio: 16 / 9;
-    background-image: linear-gradient(to top, #000000, transparent), url('/media/backgrounds/itadoriYuji.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-origin: border-box;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .8), transparent), url('/media/personajes/itadoriYuuji/itadoriYuuji_A.jpg');
 
     width: calc(100% - 2rem);
     margin-left: 1rem;
     margin-right: 1rem;
     border-radius: var(--border-radius);
     padding: 1rem;
-
 }
 
 .hero__block {
@@ -352,7 +347,6 @@ li {
     flex-flow: column nowrap;
     align-items: center;
 }
-
 /* ==========================================================================
     SECCION DE CARACTERÍSTICAS
     Descripción: Estilos de la seccion de característica.
@@ -451,7 +445,7 @@ li {
 
 .aside {
     flex: 0 0 300px; 
-    padding: 2rem 1.5rem;
+    padding: 1rem;
     border-right: var(--border-line);
     background-color: var(--bg-secondary);
     
@@ -466,13 +460,13 @@ li {
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
-    gap: 3rem;
+    gap: 1.5rem;
 }
 
 .aside__filters { 
     display: flex;
     flex-flow: column nowrap;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .filter-group {
@@ -498,6 +492,165 @@ li {
     flex-direction: column;
     gap: 0.5rem;
 }
+/* ==========================================================================
+    ESTILOS ADICIONALES PARA FILTROS
+    Descripción: Estilos mejorados para el sistema de filtrado
+   ========================================================================== */
+
+/* Mejora en labels de checkboxes */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    transition: color 200ms ease;
+    padding: 0.5rem 0.25rem;
+}
+
+.checkbox-label:hover {
+    color: var(--brand-primary);
+}
+
+.checkbox-label input[type="checkbox"] {
+    cursor: pointer;
+    accent-color: var(--brand-primary);
+    width: 18px;
+    height: 18px;
+}
+
+.checkbox-label span {
+    user-select: none;
+}
+
+/* Estilos mejorados para inputs y selects */
+.filter-group input[type="text"],
+.filter-group select {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    transition: all 200ms ease;
+}
+
+.filter-group input[type="text"]:focus,
+.filter-group select:focus {
+    outline: 2px solid var(--brand-primary);
+    outline-offset: 2px;
+}
+
+.filter-group input[type="text"]::placeholder {
+    color: rgba(16, 16, 16, 0.5);
+}
+
+/* Label styling mejorado */
+.label-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-light);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}
+
+.label-title i {
+    color: var(--brand-primary);
+    font-size: 1.1rem;
+}
+
+/* Contenedor de botones de acción */
+.filter-actions {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-filter {
+    background-color: var(--brand-accent);
+    flex: 1;
+    min-width: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 200ms ease;
+}
+
+.btn-filter:hover {
+    background-color: var(--brand-primary);
+    transform: translateY(-2px);
+}
+
+.btn-reset {
+    background-color: var(--bg-tertiary);
+    flex: 1;
+    min-width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: 1px solid var(--border-lined);
+    transition: all 200ms ease;
+    color: var(--text-light);
+}
+
+.btn-reset:hover {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    border-color: var(--brand-primary);
+}
+
+/* Mensaje cuando no hay resultados */
+.mensaje-vacio {
+    grid-column: 1 / -1;
+    display: grid;
+    place-items: center;
+    min-height: 300px;
+    padding: 2rem;
+}
+
+.mensaje-vacio-content {
+    text-align: center;
+    opacity: 0.6;
+}
+
+.mensaje-vacio-content i {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+    color: var(--brand-primary);
+}
+
+.mensaje-vacio-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.mensaje-vacio-content p {
+    font-size: 0.95rem;
+    color: rgba(241, 241, 241, 0.7);
+}
+
+/* Estado activo de las cards cuando hay filtros activos */
+.card-item {
+    transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.card-item.filtro-activo {
+    animation: slideIn 200ms ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* ==========================================================================
     SECCION DE CONTENT (RUTINAS Y EJERCICIOS) (PARTE 2)
     Descripción: Estilos de la seccion de content.
@@ -639,6 +792,175 @@ li {
     gap: .625rem;
 }
 
+/* ==========================================================================
+    SECCION PRINCIPAL (DETALLE) Alterno del HERO
+    Descripciön: Estilos para el hero.
+    Estructura:
+        - .hero-detakle
+        - .hero__block-detalle
+        - .hero__text-detalle
+   ========================================================================== */
+.hero-detalle {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .8), transparent), url('/media/personajes/itadoriYuuji/itadoriYuuji_C.jpg');
+}
+
+.hero__block-detalle {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: end;
+    align-items: start;
+
+    position: relative;
+    height: 100%;
+}
+
+.hero__text-detalle {
+    padding: 1rem 2rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: start;
+
+    background-color: rgba(241, 241, 241, 0.2);
+    backdrop-filter: blur(2px);
+    border-start-start-radius: 35px;
+    border-end-end-radius: 35px;
+    border-start-end-radius: var(--border-radius);
+    border-end-start-radius: var(--border-radius);
+
+    border: #900302 1px solid;
+    
+}
+
+/* ==========================================================================
+    SECCION DE TRAINING
+    Descripciön: Estilos para el training.
+    Estructura:
+        - .training
+        - .training__block
+        - .training__text
+   ========================================================================== */
+.training__block {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2rem;
+}
+
+.training__content {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .5rem;
+}
+
+.training__list {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .5rem;
+    
+}
+
+.training__item {
+    text-transform: unset;
+    font-weight: 400;
+}
+/* ==========================================================================
+    SECCION DETALLE
+    Descripciön: Estilos para el detalle.
+    Estructura:
+        - .detail
+        - .detail__block
+        - .detail__routine
+        - .detail__routine h3
+        - .table-container
+        - .rutina-table
+        - .rutina-table .thead
+        - .rutina-table .tr
+        - .rutina-table .tr .td:first-child
+        - .rutina-table .td
+        - .rutina-table .tr:not(.thead .tr):hover
+   ========================================================================== */
+
+.detail {
+
+}
+
+.detail__block {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2rem;
+}
+
+.detail__routine {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .5rem;
+}
+
+.detail__routine h3 {
+    background-color: var(--bg-tertiary);
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+}
+
+.rutina-table {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 1rem;
+    border: var(--border-line);
+    border-radius: var(--border-radius);
+    border-collapse: collapse;
+    overflow: hidden;
+}
+
+.rutina-table .td {
+    padding: 12px 15px;
+    border: var(--border-line);
+    text-align: left;
+}
+
+.rutina-table .tr .td:first-child {
+    font-weight: bold;
+}
+
+/* 1. Alternancia: Solo afecta a filas que NO son thead */
+.rutina-table .tr:not(.thead):nth-child(even) {
+    background-color: var(--bg-secondary);
+}
+
+.rutina-table .tr:not(.thead):nth-child(odd) {
+    background-color: var(--bg-tertiary);
+}
+/* ==========================================================================
+    SECCION ACORDEÓN
+    Descripción: Estilos para el efecto acordeón de tablas.
+    Estructura:
+        - .accordion-icon
+        - .accordion-content
+        - .accordion-content.active-accordion
+   ========================================================================== */
+
+.accordion-icon {
+    display: inline-block;
+    margin-left: 1rem;
+    font-size: 1rem;
+    transition: transform 300ms ease;
+    color: var(--brand-accent);
+}
+
+.accordion-icon.rotated {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 400ms ease, opacity 300ms ease;
+    opacity: 0;
+}
+
+.accordion-content.active-accordion {
+    max-height: 2000px;
+    opacity: 1;
+}
 
 /* ==========================================================================
     SECCION DE FOOTER
@@ -755,5 +1077,3 @@ li {
     flex-flow: column nowrap;
     align-items: end;
 }
-
-
