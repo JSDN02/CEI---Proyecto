@@ -1,5 +1,5 @@
 <!--
-Descripción: Este archivo "index.html" contiene la pagina principal de la web.
+Descripción: Este archivo "ejercicios.html" contiene la pagina de ejercicios.
 Estructura general:
 - Encabezado
     - Barra de navegación
@@ -13,11 +13,10 @@ Estructura general:
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-    <script defer src="js/forEachRutina.js"></script>
-    <script defer src="js/filtrador.js"></script>
+    <script defer src="../js/ejercicios-filter.js"></script>
     <title>Graziano Fit</title>
 </head>
 
@@ -34,9 +33,9 @@ Estructura general:
                     <a href="#" aria-label="Inicio">Graziano <span class="text-brand-soft">Fit</span></a>
                 </div>
                 <ul class="navbar">
-                    <li class="navbar-item"><a href="index.html" aria-label="Inicio">Inicio</a></li>
-                    <li class="navbar-item"><a href="rutinas.html" class="active" aria-label="Rutinas">Rutinas</a></li>
-                    <li class="navbar-item"><a href="ejercicios.html" aria-label="Ejercicio">Ejercicios</a></li>
+                    <li class="navbar-item"><a href="../index.html" aria-label="Inicio">Inicio</a></li>
+                    <li class="navbar-item"><a href="rutinas.html" aria-label="Rutinas">Rutinas</a></li>
+                    <li class="navbar-item"><a href="ejercicios.html" class="active" aria-label="Ejercicio">Ejercicios</a></li>
                 </ul>
             </div>
         </nav>
@@ -56,88 +55,63 @@ Estructura general:
 
     <!--
     Sección de Aside
-    Descripción: Panel de filtrado y búsqueda de rutinas
+    Descripción: En esta sección la barra de busqueda lateral ...
     -->
     <main class="main-content">
         <aside class="aside">
             <div class="aside__block">
                 <div class="aside__header">
-                    <h2 class="h3">Filtrador de rutinas</h2>
+                    <h2 class="h3">Filtrador de ejercicios</h2>
                 </div>
 
-                <form class="aside__filters" name="filtroRutinas">
-                    <!-- Búsqueda por nombre -->
+                <form class="aside__filters" name="filtroEjercicios">
                     <div class="filter-group">
-                        <label for="filterName" class="label-title h4">
+                        <label for="name" class="label-title h4">
                             <i class="ri-search-line"></i> Buscar por nombre
                         </label>
-                        <input 
-                            type="text" 
-                            id="filterName" 
-                            placeholder="Ej: Itadori, Sung Jin-Woo..."
-                            aria-label="Buscar rutina por nombre"
-                        >
+                        <input type="text" id="name" placeholder="Ej: Hipertrofia pierna..." aria-label="Buscar ejercicio por nombre">
                     </div>
 
-                    <!-- Filtro por Enfoque -->
                     <div class="filter-group">
-                        <label class="label-title h4">
-                            <i class="ri-focus-2-line"></i> Enfoque
+                        <label for="filterMusculo" class="label-title h4">
+                            <i class="ri-focus-2-line"></i> Grupo muscular
                         </label>
-                        <div class="checkbox-list">
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="enfoque" value="Fuerza" aria-label="Filtrar por Fuerza">
-                                <span>Fuerza</span>
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="enfoque" value="Resistencia" aria-label="Filtrar por Resistencia">
-                                <span>Resistencia</span>
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="enfoque" value="Hipertrofia" aria-label="Filtrar por Hipertrofia">
-                                <span>Hipertrofia</span>
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="enfoque" value="Explosividad" aria-label="Filtrar por Explosividad">
-                                <span>Explosividad</span>
-                            </label>
-                        </div>
+                        <select id="filterMusculo" aria-label="Seleccionar grupo muscular">
+                            <option value="all">Todos los grupos</option>
+                            <option value="fuerza">Fuerza</option>
+                            <option value="resistencia">Resistencia</option>
+                            <option value="flexibilidad">Flexibilidad</option>
+                        </select>
                     </div>
 
-                    <!-- Filtro por Dificultad -->
                     <div class="filter-group">
-                        <label for="filterDifficulty" class="label-title h4">
+                        <label for="difficulty" class="label-title h4">
                             <i class="ri-level-line"></i> Dificultad
                         </label>
-                        <select 
-                            id="filterDifficulty"
-                            aria-label="Seleccionar dificultad de rutinas"
-                        >
-                            <option value="all">Todas las dificultades</option>
+                        <select id="difficulty" aria-label="Seleccionar dificultad del ejercicio">
+                            <option value="all">Todas</option>
                             <option value="beg">Principiante</option>
                             <option value="int">Intermedio</option>
                             <option value="adv">Avanzado</option>
                         </select>
                     </div>
 
-                    <!-- Filtro por Modalidad -->
                     <div class="filter-group">
                         <label class="label-title h4">
                             <i class="ri-building-line"></i> Modalidad
                         </label>
                         <div class="checkbox-list">
                             <label class="checkbox-label">
-                                <input type="checkbox" name="modalidad" value="gym" aria-label="Filtrar rutinas de Gimnasio">
+                                <input type="checkbox" value="gym" aria-label="Filtrar por Gimnasio">
                                 <span>Gimnasio</span>
                             </label>
                             <label class="checkbox-label">
-                                <input type="checkbox" name="modalidad" value="home" aria-label="Filtrar rutinas en Casa">
+                                <input type="checkbox" value="home" aria-label="Filtrar por Casa / Calistenia">
                                 <span>Casa / Calistenia</span>
                             </label>
                         </div>
                     </div>
 
-                    <!-- Botones de acción -->
                     <div class="filter-actions">
                         <button type="button" class="btn btn-filter btn-card">
                             <i class="ri-filter-3-line"></i> Aplicar Filtros
@@ -152,57 +126,56 @@ Estructura general:
 
         <section class="section content">
             <div class="container content">
-                <h2>Biblioteca de Rutinas</h2>
-                <div id="routineGrid" class="content__grid">
+                <h2>Biblioteca de Ejercicios</h2>
+                <div class="content__grid">
 
-                    <article class="card">
+                    <div class="card" data-name="Nombre Ejercicio" data-group="fuerza" data-difficulty="beg" data-modalities="gym">
+                        <div class="card-banner">
+                            <div class="badge-pro">PRO</div>
+                            <h3>Nombre Ejercicio</h3>
+                        </div>
 
-                        <header class="card-header">
-                            <div class="card-banner-content">
-                                <div class="badge">Prueba</div>
-                                <h3>Prueba</h3>
-                            </div>
-                        </header>
-
-                        <section class="card-content">
+                        <div class="card-content">
                             <div class="tags">
-                                <span class="tag gym">Prueba</span>
-                                <span class="tag calisthenics">Prueba</span>
+                                <span class="tag gym">Gimnasio</span>
+                                <span class="tag calisthenics">Calistenia</span>
                             </div>
+                            <button class="btn btn-gradient btn-card">VER EJERCICIO <i class="ri-arrow-right-fill"></i></button>
+                        </div>
+                    </div>
 
-                            <div class="stats-grid">
-                                <div class="stat-item">
-                                    <div class="stat-header">Prueba</div>
-                                    <div class="progress-bar">
-                                        <div class="progress" style="width: 50%"></div>
-                                    </div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-header">Prueba</div>
-                                    <div class="progress-bar">
-                                        <div class="progress" style="width: 20%"></div>
-                                    </div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-header">Prueba</div>
-                                    <div class="progress-bar">
-                                        <div class="progress" style="width: 50%"></div>
-                                    </div>
-                                </div>
+                    <div class="card" data-name="Nombre Ejercicio" data-group="resistencia" data-difficulty="int" data-modalities="home">
+                        <div class="card-banner">
+                            <div class="badge-pro">PRO</div>
+                            <h3>Nombre Ejercicio</h3>
+                        </div>
+
+                        <div class="card-content">
+                            <div class="tags">
+                                <span class="tag gym">Gimnasio</span>
+                                <span class="tag calisthenics">Calistenia</span>
                             </div>
-                        </section>
+                            <button class="btn btn-gradient btn-card">VER EJERCICIO <i class="ri-arrow-right-fill"></i></button>
+                        </div>
+                    </div>
 
-                        <footer class="card-action">
-                            <button class="btn btn-gradient btn-card">
-                                Prueba <i class="ri-arrow-right-fill"></i>
-                            </button>
-                            <a href="#" class="btn btn-download btn-card" target="_blank" rel="noopener">
-                                <i class="ri-download-2-fill"></i> Prueba
-                            </a>
-                        </footer>
+                    <div class="card" data-name="Nombre Ejercicio" data-group="flexibilidad" data-difficulty="adv" data-modalities="gym,home">
+                        <div class="card-banner">
+                            <div class="badge-pro">PRO</div>
+                            <h3>Nombre Ejercicio</h3>
+                        </div>
 
-                    </article>
+                        <div class="card-content">
+                            <div class="tags">
+                                <span class="tag gym">Gimnasio</span>
+                                <span class="tag calisthenics">Calistenia</span>
+                            </div>
+                            <button class="btn btn-gradient btn-card">VER EJERCICIO <i class="ri-arrow-right-fill"></i></button>
+                        </div>
+                    </div>
 
+                    
+                    
                 </div>
             </div>
         </section>
@@ -229,7 +202,7 @@ Estructura general:
                 <div class="footer-navigation">
                     <h4>Explorar</h4>
                     <ul>
-                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="../index.html">Inicio</a></li>
                         <li><a href="rutinas.html">Rutinas</a></li>
                         <li><a href="ejercicios.html">Ejercicios</a></li>
                     </ul>

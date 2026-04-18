@@ -1,4 +1,4 @@
-// js/detalle.js
+// js/rutinas-detalle.js
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Obtener el ID de la URL
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function cargarDetalle(id) {
     try {
-        const response = await fetch('../js/rutinas.json');
+        const response = await fetch('../../data/rutinas.json');
         const data = await response.json();
         
         // Encontrar la rutina que coincide con el ID (slug)
@@ -43,6 +43,12 @@ function renderizarDetalle(rutina) {
             <p><b>Modalidad:</b> ${rutina.ficha_tecnica.modalidad}.</p>
             <p><b>Duración estimada:</b> ${rutina.ficha_tecnica.duracion_estimada}.</p>
         `;
+    }
+
+    // Setear background dinámico
+    const heroDetalle = document.querySelector('.hero-detalle');
+    if (heroDetalle && rutina.card.IMG_background) {
+        heroDetalle.style.backgroundImage = `linear-gradient(to top, rgba(0, 0, 0, .8), transparent), url('${rutina.card.IMG_background}')`;
     }
 
     // 2. Renderizado de Descripción y Título

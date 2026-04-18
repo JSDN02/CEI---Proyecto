@@ -1,0 +1,261 @@
+<!--
+Descripción: Este archivo "rutinas.html" contiene la pagina de rutinas.
+Estructura general:
+- Encabezado
+    - Barra de navegación
+    - Sección Hero
+- 
+- 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <script defer src="../js/rutinas-list.js"></script>
+    <script defer src="../js/rutinas-filter.js"></script>
+    <title>Graziano Fit</title>
+</head>
+
+<body>
+    <!--
+    Sección de Encabezado
+    Descripción: En esta sección tenemos el encabezado (Nav + Hero) ...
+    -->
+    <header class="main-header">
+        <!-- Navegación -->
+        <nav class="section navigation">
+            <div class="container navigation__block">
+                <div class="logo">
+                    <a href="#" aria-label="Inicio">Graziano <span class="text-brand-soft">Fit</span></a>
+                </div>
+                <ul class="navbar">
+                    <li class="navbar-item"><a href="../index.html" aria-label="Inicio">Inicio</a></li>
+                    <li class="navbar-item"><a href="rutinas.html" class="active" aria-label="Rutinas">Rutinas</a></li>
+                    <li class="navbar-item"><a href="ejercicios.html" aria-label="Ejercicio">Ejercicios</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Banner Hero -->
+        <section class="section hero hero-routine">
+            <div class="container hero__block">
+                <div class="hero__text">
+                    <p class="text-phrase-big">Entrena como los personajes más fuertes del anime</p>
+                </div>
+            </div>
+        </section>
+    </header>
+    <!--
+    Sección de Encabezado (Final)
+    -->
+
+    <!--
+    Sección de Aside
+    Descripción: Panel de filtrado y búsqueda de rutinas
+    -->
+    <main class="main-content">
+        <aside class="aside">
+            <div class="aside__block">
+                <div class="aside__header">
+                    <h2 class="h3">Filtrador de rutinas</h2>
+                </div>
+
+                <form class="aside__filters" name="filtroRutinas">
+                    <!-- Búsqueda por nombre -->
+                    <div class="filter-group">
+                        <label for="filterName" class="label-title h4">
+                            <i class="ri-search-line"></i> Buscar por nombre
+                        </label>
+                        <input 
+                            type="text" 
+                            id="filterName" 
+                            placeholder="Ej: Itadori, Sung Jin-Woo..."
+                            aria-label="Buscar rutina por nombre"
+                        >
+                    </div>
+
+                    <!-- Filtro por Enfoque -->
+                    <div class="filter-group">
+                        <label for="filterEnfoque" class="label-title h4">
+                            <i class="ri-focus-2-line"></i> Enfoque
+                        </label>
+                        <select id="filterEnfoque" aria-label="Seleccionar enfoque de rutinas">
+                            <option value="all">Todos los enfoques</option>
+                            <option value="Fuerza">Fuerza</option>
+                            <option value="Resistencia">Resistencia</option>
+                            <option value="Hipertrofia">Hipertrofia</option>
+                            <option value="Explosividad">Explosividad</option>
+                        </select>
+                    </div>
+
+                    <!-- Filtro por Dificultad -->
+                    <div class="filter-group">
+                        <label for="filterDifficulty" class="label-title h4">
+                            <i class="ri-level-line"></i> Dificultad
+                        </label>
+                        <select 
+                            id="filterDifficulty"
+                            aria-label="Seleccionar dificultad de rutinas"
+                        >
+                            <option value="all">Todas las dificultades</option>
+                            <option value="beg">Principiante</option>
+                            <option value="int">Intermedio</option>
+                            <option value="adv">Avanzado</option>
+                        </select>
+                    </div>
+
+                    <!-- Filtro por Modalidad -->
+                    <div class="filter-group">
+                        <label class="label-title h4">
+                            <i class="ri-building-line"></i> Modalidad
+                        </label>
+                        <div class="checkbox-list">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="modalidad" value="gym" aria-label="Filtrar rutinas de Gimnasio">
+                                <span>Gimnasio</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="modalidad" value="home" aria-label="Filtrar rutinas en Casa">
+                                <span>Casa / Calistenia</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Botones de acción -->
+                    <div class="filter-actions">
+                        <button type="button" class="btn btn-filter btn-card">
+                            <i class="ri-filter-3-line"></i> Aplicar Filtros
+                        </button>
+                        <button type="button" class="btn btn-reset btn-card">
+                            <i class="ri-refresh-line"></i> Limpiar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </aside>
+
+        <section class="section content">
+            <div class="container content">
+                <h2>Biblioteca de Rutinas</h2>
+                <div id="routineGrid" class="content__grid">
+
+                    <!--
+                        Plantilla de tarjeta de rutina (Ejemplo)
+                        Reemplazar con generación dinámica a partir de rutinas.json  -->
+
+            <!--    article class="card">
+
+                        <header class="card-header">
+                            <div class="card-banner-content">
+                                <div class="badge">Prueba</div>
+                                <h3>Prueba</h3>
+                            </div>
+                        </header>
+
+                        <section class="card-content">
+                            <div class="tags">
+                                <span class="tag gym">Prueba</span>
+                                <span class="tag calisthenics">Prueba</span>
+                            </div>
+
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <div class="stat-header">Prueba</div>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 50%"></div>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-header">Prueba</div>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 20%"></div>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-header">Prueba</div>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 50%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <footer class="card-action">
+                            <button class="btn btn-gradient btn-card">
+                                Prueba <i class="ri-arrow-right-fill"></i>
+                            </button>
+                            <a href="#" class="btn btn-download btn-card" target="_blank" rel="noopener">
+                                <i class="ri-download-2-fill"></i> Prueba
+                            </a> -->
+                        </footer>
+
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--
+    Sección de Aside (Final)
+    -->
+
+    <!--
+    Sección Footer
+    Descripción: En esta sección tenemos la notas del pie de pagina
+    -->
+    <footer class="section footer">
+        <div class="container footer__block">
+            <div class="footer__info">
+                <div class="logo">
+                    <a href="#">Graziano <span class="text-brand-soft">Fit</span></a>
+                </div>
+                <p>Lleva tu cuerpo al siguiente nivel con la disciplina del anime.</p>
+            </div>
+
+            <div class="footer__nav">
+                <div class="footer-navigation">
+                    <h4>Explorar</h4>
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="rutinas.html">Rutinas</a></li>
+                        <li><a href="ejercicios.html">Ejercicios</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__social">
+                <h4>Comunidad</h4>
+                <div class="social-links">
+                    <a href="https://www.youtube.com/@santigraziano" target="_blank" aria-label="Youtube"
+                        rel="noopener noreferrer">
+                        <i class="ri-youtube-fill"></i>
+                    </a>
+                    <a href="https://discord.gg/7jkKCjAxfK" target="_blank" aria-label="Discord"
+                        rel="noopener noreferrer">
+                        <i class="ri-discord-fill"></i>
+                    </a>
+                    <a href="#" target="_blank" aria-label="Instagram" rel="noopener noreferrer">
+                        <i class="ri-instagram-fill"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class=" container footer__bottom">
+            <p>&copy; 2024 Graziano Fit. Todos los derechos reservados.</p>
+            <div class="footer__bottom-phrase">
+                <span class="text-gradient st-footer">Stay Hard</span>
+                <p>Entrena como los personajes más fuertes</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

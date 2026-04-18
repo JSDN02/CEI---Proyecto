@@ -7,7 +7,7 @@ class FiltroRutinas {
     constructor() {
         // Elementos del DOM
         this.nameInput = document.getElementById('filterName');
-        this.enfoque = document.querySelectorAll('input[name="enfoque"]');
+        this.enfoque = document.getElementById('filterEnfoque');
         this.difficulty = document.getElementById('filterDifficulty');
         this.modalidad = document.querySelectorAll('input[name="modalidad"]');
         this.applyBtn = document.querySelector('.btn-filter');
@@ -59,7 +59,7 @@ class FiltroRutinas {
 
     /**
      * Guarda las rutinas para referencia
-     * Se llama desde forEachRutina.js
+     * Se llama desde rutinas-list.js
      */
     setRutinas(rutinas) {
         this.rutinas = rutinas;
@@ -69,11 +69,10 @@ class FiltroRutinas {
      * Obtiene los valores de los filtros actuales
      */
     obtenerFiltros() {
+        const selectedEnfoque = this.enfoque ? this.enfoque.value : 'all';
         const filtros = {
             nombre: this.nameInput ? this.nameInput.value.toLowerCase().trim() : '',
-            enfoque: Array.from(this.enfoque)
-                .filter(checkbox => checkbox.checked)
-                .map(checkbox => checkbox.value),
+            enfoque: selectedEnfoque !== 'all' ? [selectedEnfoque] : [],
             dificultad: this.difficulty ? this.difficulty.value : 'all',
             modalidad: Array.from(this.modalidad)
                 .filter(checkbox => checkbox.checked)
@@ -225,10 +224,10 @@ class FiltroRutinas {
             this.nameInput.value = '';
         }
 
-        // Desmarcar checkboxes de enfoque
-        this.enfoque.forEach(checkbox => {
-            checkbox.checked = false;
-        });
+        // Resetear select de enfoque
+        if (this.enfoque) {
+            this.enfoque.value = 'all';
+        }
 
         // Resetear select de dificultad
         if (this.difficulty) {

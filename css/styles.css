@@ -315,7 +315,7 @@ li {
 .hero {
     height: 93vh;
     aspect-ratio: 16 / 9;
-    background-image: linear-gradient(to top, #000000, transparent), url('/media/backgrounds/tojiFushiguroTemporal.png');
+    background-image: linear-gradient(to top, #000000, transparent), url('/assets/images/backgrounds/tojiFushiguroTemporal.png');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -324,7 +324,7 @@ li {
 
 .hero-routine {
     height: 60vh;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, .8), transparent), url('/media/personajes/itadoriYuuji/itadoriYuuji_A.jpg');
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .8), transparent), url('/assets/images/personajes/itadoriYuuji/itadoriYuuji_A.jpg');
 
     width: calc(100% - 2rem);
     margin-left: 1rem;
@@ -466,7 +466,7 @@ li {
 .aside__filters { 
     display: flex;
     flex-flow: column nowrap;
-    gap: 1rem;
+    gap: 2.5rem;
 }
 
 .filter-group {
@@ -688,7 +688,7 @@ li {
     height: 175px;
     
     /* Quitamos el background-image fijo de aquí */
-    background-image: linear-gradient(to top, #000000, transparent), url("../media/personajes/itadoriYuuji/itadoriYuuji_A.jpg");
+    background-image: linear-gradient(to top, #000000, transparent), url("../assets/images/personajes/itadoriYuuji/itadoriYuuji_A.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -801,7 +801,10 @@ li {
         - .hero__text-detalle
    ========================================================================== */
 .hero-detalle {
-    background-image: linear-gradient(to top, rgba(0, 0, 0, .8), transparent), url('/media/personajes/itadoriYuuji/itadoriYuuji_C.jpg');
+    /* background-image se setea dinámicamente en JS */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .hero__block-detalle {
@@ -879,9 +882,6 @@ li {
         - .rutina-table .tr:not(.thead .tr):hover
    ========================================================================== */
 
-.detail {
-
-}
 
 .detail__block {
     display: flex;

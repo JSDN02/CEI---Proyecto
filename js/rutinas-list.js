@@ -1,5 +1,5 @@
 // Configuración
-const JSON_URL = 'js/rutinas.json';
+const JSON_URL = '../data/rutinas.json';
 const grid = document.getElementById('routineGrid');
 grid.addEventListener('click', (e) => {
     // Buscamos si el clic fue en el botón o algo dentro de él
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', cargarRutinas);
 
 function verDetalle(id) {
     // Ajustado para entrar a la carpeta 'rutinas'
-    window.location.href = `rutinas/detalle.html?id=${id}`;
+    window.location.href = `rutinas/detalle-rutina.html?id=${id}`;
 }
 
 
@@ -113,5 +113,5 @@ function verDetalle(id) {
 
 function verDetalle(id) {
     // Ajustado para entrar a la carpeta 'rutinas'
-    window.location.href = `rutinas/detalle.html?id=${id}`;
+    window.location.href = `rutinas/detalle-rutina.html?id=${id}`;
 }
