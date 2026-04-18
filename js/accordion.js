@@ -26,19 +26,12 @@ function initializeAccordion() {
             // Agregar clase de acordeón al contenedor de tabla
             tableContainer.classList.add('accordion-content');
 
-            // Crear ícono de indicador
-            const indicator = document.createElement('span');
-            indicator.classList.add('accordion-icon');
-            indicator.innerHTML = '<i class="ri-arrow-down-long-fill"></i>';
-            heading.appendChild(indicator);
-
             // Estado inicial: cerrado
             // NO agregamos la clase 'active' para que comience cerrada
 
             // Evento click para toggle
             heading.addEventListener('click', () => {
                 toggleAccordion(tableContainer);
-                toggleIcon(indicator);
             });
 
             // Evento tecla Enter para accesibilidad
@@ -46,7 +39,6 @@ function initializeAccordion() {
                 if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
                     toggleAccordion(tableContainer);
-                    toggleIcon(indicator);
                 }
             });
         }
@@ -55,9 +47,10 @@ function initializeAccordion() {
 
 function toggleAccordion(element) {
     element.classList.toggle('active-accordion');
-    element
-}
-
-function toggleIcon(icon) {
-    icon.classList.toggle('rotated');
+    const heading = element.previousElementSibling;
+    const isActive = element.classList.contains('active-accordion');
+    if (heading && heading.tagName === 'H3') {
+        heading.style.backgroundColor = isActive ? window.rutinaColor : '';
+        heading.style.color = isActive ? 'white' : '';
+    }
 }

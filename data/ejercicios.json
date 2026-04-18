@@ -1,0 +1,100 @@
+{
+    "ejercicios": [
+        {
+            "slug": "flexiones",
+            "nombre": "Flexiones",
+            "grupo_muscular": "Pectorales, Tríceps, Hombros",
+            "nivel": "Principiante",
+            "implementos": [
+                "Ninguno"
+            ],
+            "modalidades": ["gym", "home"],
+            "descripcion": "Las flexiones son un ejercicio fundamental de calistenia que fortalece el pecho, tríceps y hombros. Consisten en bajar el cuerpo hacia el suelo y empujar hacia arriba usando solo el peso corporal.",
+            "imagenes": [
+                "https://via.placeholder.com/400x300?text=Flexiones+1",
+                "https://via.placeholder.com/400x300?text=Flexiones+2"
+            ],
+            "variaciones": [
+                {
+                    "tipo": "Flexiones estándar",
+                    "dificultad": "Principiante",
+                    "descripcion": "Posición básica con manos a ancho de hombros."
+                },
+                {
+                    "tipo": "Flexiones diamante",
+                    "dificultad": "Intermedio",
+                    "descripcion": "Manos juntas formando un diamante, enfocado en tríceps."
+                },
+                {
+                    "tipo": "Flexiones con elevación",
+                    "dificultad": "Avanzado",
+                    "descripcion": "Pies elevados en una superficie, aumenta la dificultad."
+                }
+            ]
+        },
+        {
+            "slug": "sentadillas",
+            "nombre": "Sentadillas",
+            "grupo_muscular": "Cuádriceps, Glúteos, Isquiotibiales",
+            "nivel": "Principiante",
+            "implementos": [
+                "Ninguno"
+            ],
+            "modalidades": ["gym", "home"],
+            "descripcion": "Las sentadillas son un ejercicio compuesto que fortalece las piernas y glúteos. Consisten en bajar el cuerpo como si te sentaras en una silla imaginaria y luego levantarte.",
+            "imagenes": [
+                "https://via.placeholder.com/400x300?text=Sentadillas+1",
+                "https://via.placeholder.com/400x300?text=Sentadillas+2"
+            ],
+            "variaciones": [
+                {
+                    "tipo": "Sentadillas básicas",
+                    "dificultad": "Principiante",
+                    "descripcion": "Posición estándar con pies a ancho de hombros."
+                },
+                {
+                    "tipo": "Sentadillas búlgaras",
+                    "dificultad": "Intermedio",
+                    "descripcion": "Un pie elevado detrás, mayor equilibrio y fuerza unilateral."
+                },
+                {
+                    "tipo": "Sentadillas con salto",
+                    "dificultad": "Avanzado",
+                    "descripcion": "Agregar un salto explosivo al levantarse."
+                }
+            ]
+        },
+        {
+            "slug": "abdominales",
+            "nombre": "Abdominales",
+            "grupo_muscular": "Abdominales",
+            "nivel": "Principiante",
+            "implementos": [
+                "Ninguno"
+            ],
+            "modalidades": ["gym", "home"],
+            "descripcion": "Los abdominales fortalecen el core y mejoran la estabilidad central. Consisten en levantar el torso desde el suelo hacia las rodillas manteniendo las piernas flexionadas.",
+            "imagenes": [
+                "https://via.placeholder.com/400x300?text=Abdominales+1",
+                "https://via.placeholder.com/400x300?text=Abdominales+2"
+            ],
+            "variaciones": [
+                {
+                    "tipo": "Crunch básico",
+                    "dificultad": "Principiante",
+                    "descripcion": "Levantar el torso manteniendo las piernas en el suelo."
+                },
+                {
+                    "tipo": "Plank",
+                    "dificultad": "Intermedio",
+                    "descripcion": "Mantener la posición isométrica con el cuerpo recto."
+                },
+                {
+                    "tipo": "Russian twists",
+                    "dificultad": "Avanzado",
+                    "descripcion": "Girar el torso lateralmente con las piernas elevadas."
+                }
+            ]
+        }
+    ]
+}

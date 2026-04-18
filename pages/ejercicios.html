@@ -17,6 +17,7 @@ Estructura general:
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <script defer src="../js/ejercicios-filter.js"></script>
+    <script defer src="../js/ejercicios-list.js"></script>
     <title>Graziano Fit</title>
 </head>
 
@@ -78,9 +79,9 @@ Estructura general:
                         </label>
                         <select id="filterMusculo" aria-label="Seleccionar grupo muscular">
                             <option value="all">Todos los grupos</option>
-                            <option value="fuerza">Fuerza</option>
-                            <option value="resistencia">Resistencia</option>
-                            <option value="flexibilidad">Flexibilidad</option>
+                            <option value="pectorales">Pectorales</option>
+                            <option value="cuádriceps">Cuádriceps</option>
+                            <option value="abdominales">Abdominales</option>
                         </select>
                     </div>
 
@@ -127,55 +128,10 @@ Estructura general:
         <section class="section content">
             <div class="container content">
                 <h2>Biblioteca de Ejercicios</h2>
-                <div class="content__grid">
+                <div id="exerciseGrid" class="content__grid">
 
-                    <div class="card" data-name="Nombre Ejercicio" data-group="fuerza" data-difficulty="beg" data-modalities="gym">
-                        <div class="card-banner">
-                            <div class="badge-pro">PRO</div>
-                            <h3>Nombre Ejercicio</h3>
-                        </div>
+                    <!-- Las tarjetas se generan dinámicamente -->
 
-                        <div class="card-content">
-                            <div class="tags">
-                                <span class="tag gym">Gimnasio</span>
-                                <span class="tag calisthenics">Calistenia</span>
-                            </div>
-                            <button class="btn btn-gradient btn-card">VER EJERCICIO <i class="ri-arrow-right-fill"></i></button>
-                        </div>
-                    </div>
-
-                    <div class="card" data-name="Nombre Ejercicio" data-group="resistencia" data-difficulty="int" data-modalities="home">
-                        <div class="card-banner">
-                            <div class="badge-pro">PRO</div>
-                            <h3>Nombre Ejercicio</h3>
-                        </div>
-
-                        <div class="card-content">
-                            <div class="tags">
-                                <span class="tag gym">Gimnasio</span>
-                                <span class="tag calisthenics">Calistenia</span>
-                            </div>
-                            <button class="btn btn-gradient btn-card">VER EJERCICIO <i class="ri-arrow-right-fill"></i></button>
-                        </div>
-                    </div>
-
-                    <div class="card" data-name="Nombre Ejercicio" data-group="flexibilidad" data-difficulty="adv" data-modalities="gym,home">
-                        <div class="card-banner">
-                            <div class="badge-pro">PRO</div>
-                            <h3>Nombre Ejercicio</h3>
-                        </div>
-
-                        <div class="card-content">
-                            <div class="tags">
-                                <span class="tag gym">Gimnasio</span>
-                                <span class="tag calisthenics">Calistenia</span>
-                            </div>
-                            <button class="btn btn-gradient btn-card">VER EJERCICIO <i class="ri-arrow-right-fill"></i></button>
-                        </div>
-                    </div>
-
-                    
-                    
                 </div>
             </div>
         </section>

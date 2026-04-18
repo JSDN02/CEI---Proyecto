@@ -2,6 +2,7 @@
   "rutinas": [
     {
       "slug": "protocolo-itadori",
+      "color": "#741d21",
       "card": {
         "dificultad": "Principiante",
         "nombre_display": "Itadori Yuji",
@@ -477,6 +478,7 @@
     },
     {
       "slug": "fisico-anime-casa",
+      "color": "#5170ff",
       "card": {
         "dificultad": "Principiante",
         "nombre_display": "Físico Anime en Casa",
@@ -729,6 +731,7 @@
     },
     {
       "slug": "protocolo-sung-jinwoo",
+      "color": "#b1a6ff",
       "card": {
         "dificultad": "Principiante",
         "nombre_display": "Sung Jin-Woo",

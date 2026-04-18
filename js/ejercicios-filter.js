@@ -1,3 +1,9 @@
+/**
+ * Filtrador de Ejercicios
+ * Basado en la lógica de rutinas-filter.js, pero adaptado a los parámetros
+ * propios de la colección de ejercicios.
+ */
+
 class FiltroEjercicios {
     constructor() {
         this.nameInput = document.getElementById('name');
@@ -6,9 +12,12 @@ class FiltroEjercicios {
         this.modalityInputs = document.querySelectorAll('.aside__filters input[type="checkbox"]');
         this.applyBtn = document.querySelector('.aside__filters .btn-filter');
         this.resetBtn = document.querySelector('.aside__filters .btn-reset');
-        this.cards = document.querySelectorAll('.content__grid .card');
+        this.gridContainer = document.getElementById('exerciseGrid');
+        this.cards = [];
 
+        window.filtroEjercicios = this;
         this.inicializar();
+        this.actualizarCards();
     }
 
     inicializar() {
@@ -34,27 +43,36 @@ class FiltroEjercicios {
                 }
             });
         }
+
+        document.addEventListener('ejerciciosRenderizados', () => {
+            this.actualizarCards();
+            this.aplicarFiltros();
+        });
     }
 
     obtenerFiltros() {
-        const modalidades = Array.from(this.modalityInputs)
-            .filter(checkbox => checkbox.checked)
-            .map(checkbox => checkbox.value.toLowerCase());
-
         return {
             nombre: this.nameInput ? this.nameInput.value.toLowerCase().trim() : '',
             grupo: this.groupSelect ? this.groupSelect.value.toLowerCase() : 'all',
             dificultad: this.difficulty ? this.difficulty.value.toLowerCase() : 'all',
-            modalidades
+            modalidades: Array.from(this.modalityInputs)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.value.toLowerCase())
         };
     }
 
     aplicarFiltros() {
+        this.actualizarCards();
         const filtros = this.obtenerFiltros();
 
         this.cards.forEach(card => {
             const visible = this.cumpleFiltros(card, filtros);
             card.style.display = visible ? '' : 'none';
+            if (visible) {
+                card.classList.add('filtro-activo');
+            } else {
+                card.classList.remove('filtro-activo');
+            }
         });
 
         this.mostrarMensajeVacio();
@@ -93,10 +111,10 @@ class FiltroEjercicios {
     }
 
     mostrarMensajeVacio() {
-        const tarjetasVisibles = Array.from(this.cards).filter(card => card.style.display !== 'none');
+        const tarjetasVisibles = Array.from(this.cards).filter(card => card.style.display !== 'none').length;
         let mensajeVacio = document.getElementById('mensajeVacioEjercicios');
 
-        if (tarjetasVisibles.length === 0) {
+        if (tarjetasVisibles === 0) {
             if (!mensajeVacio) {
                 mensajeVacio = document.createElement('div');
                 mensajeVacio.id = 'mensajeVacioEjercicios';
@@ -108,13 +126,18 @@ class FiltroEjercicios {
                         <p>Prueba con otros filtros o ajusta los criterios.</p>
                     </div>
                 `;
-                const grid = document.querySelector('.content__grid');
-                if (grid) grid.appendChild(mensajeVacio);
+                if (this.gridContainer) {
+                    this.gridContainer.appendChild(mensajeVacio);
+                }
             }
             mensajeVacio.style.display = 'grid';
         } else if (mensajeVacio) {
             mensajeVacio.style.display = 'none';
         }
+    }
+
+    actualizarCards() {
+        this.cards = this.gridContainer ? Array.from(this.gridContainer.querySelectorAll('.card-item')) : [];
     }
 
     resetearFiltros() {
@@ -134,11 +157,7 @@ class FiltroEjercicios {
             checkbox.checked = false;
         });
 
-        this.cards.forEach(card => {
-            card.style.display = '';
-        });
-
-        this.mostrarMensajeVacio();
+        this.aplicarFiltros();
     }
 }
 

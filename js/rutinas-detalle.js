@@ -43,6 +43,11 @@ function renderizarDetalle(rutina) {
             <p><b>Modalidad:</b> ${rutina.ficha_tecnica.modalidad}.</p>
             <p><b>Duración estimada:</b> ${rutina.ficha_tecnica.duracion_estimada}.</p>
         `;
+
+        // Aplicar color de la rutina al border
+        if (rutina.color) {
+            heroText.style.borderColor = rutina.color;
+        }
     }
 
     // Setear background dinámico
@@ -150,6 +155,7 @@ function renderizarDetalle(rutina) {
 
     // Inicializar accordion después de renderizar
     if (typeof initializeAccordion === 'function') {
+        window.rutinaColor = rutina.color;
         initializeAccordion();
     }
 }
