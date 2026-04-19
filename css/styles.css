@@ -339,7 +339,7 @@ li {
 .hero {
     height: 93vh;
     aspect-ratio: 16 / 9;
-    background-image: linear-gradient(to top, #000000, transparent), url('/assets/images/backgrounds/tojiFushiguroTemporal.png');
+    background-image: linear-gradient(to top, #000000, transparent), url('../assets/images/backgrounds/tojiFushiguroTemporal.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -348,7 +348,7 @@ li {
 
 .hero-routine {
     height: 60vh;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, .8), transparent), url('/assets/images/personajes/itadoriYuuji/itadoriYuuji_A.jpg');
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .8), transparent), url('../assets/images/personajes/itadoriYuuji/itadoriYuuji_A.jpg');
     width: calc(100% - 2rem);
     margin-inline: 1rem;
     border-radius: var(--border-radius);
