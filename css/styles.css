@@ -422,6 +422,8 @@ li {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 /* ==========================================================================
@@ -1080,27 +1082,36 @@ li {
     - .navigation__block
     - .navbar
    ========================================================================== */
+@media (max-width: 1024px) {}
 
+@media (max-width: 768px) {}
+
+@media (max-width: 480px) {}
+
+/* ==========================================================================
+   MEDIA QUERIES
+   - Tablet / Mobile (<= 768px)
+   - Mobile pequeño (<= 480px)
+   ========================================================================== */
+
+/* =========================
+   <= 768px
+   ========================= */
 @media (max-width: 768px) {
+
+    /* ----- Layout general ----- */
     .navigation__block {
         flex-flow: column nowrap;
         align-items: stretch;
-        gap: 1.5rem;
-    }
-
-    .navbar {
-        justify-content: space-between;
-        flex: 1 1 100%;
-        width: 100%;
         gap: 1rem;
     }
 
-    .text-mindisplay {
-        font-size: .875rem;
+    .main-content {
+        flex-flow: column nowrap;
     }
 
     .section {
-        padding-block: 1rem;
+        padding-block: 0.75rem;
     }
 
     .container {
@@ -1114,117 +1125,175 @@ li {
         display: none;
     }
 
-    .main-content {
-        flex-flow: column nowrap;
+    /* ----- Navbar ----- */
+    .navbar {
+        flex: 1 1 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 0.75rem;
     }
 
+    .text-mindisplay {
+        font-size: 0.875rem;
+    }
+
+    /* ----- Aside ----- */
     .aside {
         position: static;
         width: 100%;
-        flex: 1 1 100%;
         height: auto;
+        flex: 1 1 100%;
+        padding: 0.75rem;
+        background-color: var(--bg-secondary);
         border-right: none;
         border-bottom: var(--border-line);
-        padding: 0.75rem 0.9rem 0.75rem;
-        background-color: var(--bg-secondary);
     }
 
     .aside__block {
-        gap: 1rem;
+        gap: 0.75rem;
     }
 
+    .aside__header {
+        margin-bottom: 0.25rem;
+    }
+
+    /* ----- Filtros ----- */
     .aside__filters {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0.75rem;
-        align-items: start;
-    }
-
-    .aside__filters > .filter-group:first-child {
-        grid-column: 1 / -1;
-    }
-
-    .aside__filters > .filter-actions {
-        grid-column: 1 / -1;
         display: flex;
-        flex-wrap: wrap;
+        flex-flow: column nowrap;
         gap: 0.75rem;
-        justify-content: space-between;
-        align-items: center;
+        align-items: stretch;
     }
 
     .filter-group {
-        gap: 0.75rem;
+        gap: 0.5rem;
+        display: flex;
+        flex-flow: column nowrap;
     }
 
     .filter-group input[type="text"],
     .filter-group select {
-        padding: 8px 10px;
+        padding: 0.625rem 0.75rem;
         font-size: 0.95rem;
     }
 
-    .checkbox-list {
+    /* ----- Selectores Enfoque y Dificultad ----- */
+    .filter-row .filter-group {
+        flex: 1 1 50%;
+        min-width: 0;
+    }
+
+    .filter-gruop.filter-row {
         display: flex;
+        flex-flow: row nowrap;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+
+    /* ----- Checkboxes ----- */
+    .checkbox-list {
+        flex-direction: row;
         flex-wrap: wrap;
         gap: 0.5rem;
     }
 
     .checkbox-label {
-        padding: 0.35rem 0.25rem;
+        flex: 1 1 calc(50% - 0.25rem);
+        min-width: 0;
+        padding: 0.375rem 0.25rem;
+        margin: 0;
     }
 
+    /* ----- Acciones ----- */
     .filter-actions {
         display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
+        flex-flow: row nowrap;
         justify-content: space-between;
+        align-items: stretch;
+        gap: 0.5rem;
     }
 
     .btn-filter,
     .btn-reset {
-        min-width: calc(50% - 0.375rem);
-        flex: 1 1 calc(50% - 0.375rem);
-        padding: 0.75rem 0.85rem;
-        font-size: 0.95rem;
+        flex: 1 1 calc(50% - 0.25rem);
+        min-width: 0;
+        padding: 0.625rem 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    /* ----- Ocultar etiquetas ----- */
+    .label-hidden {
+        display: none;
     }
 }
 
+
+/* =========================
+   <= 480px
+   ========================= */
 @media (max-width: 480px) {
+
+    /* ----- Aside ----- */
     .aside {
-        padding: 0.65rem 0.75rem 0.6rem;
+        padding: 0.625rem;
     }
 
+    .aside__block {
+        gap: 0.5rem;
+    }
+
+    /* ----- Filtros ----- */
     .aside__filters {
-        grid-template-columns: 1fr;
+        gap: 0.5rem;
     }
 
-    .aside__filters > .filter-group:first-child,
-    .aside__filters > .filter-actions {
-        grid-column: auto;
+    .filter-group {
+        gap: 0.375rem;
     }
 
     .filter-group input[type="text"],
     .filter-group select {
-        padding: 7px 10px;
+        padding: 0.5rem 0.625rem;
         font-size: 0.9rem;
     }
 
+    /* ----- Selectores Enfoque y Dificultad ----- */
+    .filter-gruop.filter-row {
+        gap: 0.375rem;
+    }
+
+    /* ----- Checkboxes ----- */
+    .checkbox-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.375rem;
+    }
+
+    .checkbox-label {
+        flex: 1 1 calc(50% - 0.1875rem);
+        padding: 0.3125rem 0.15rem;
+    }
+
+    /* ----- Acciones ----- */
     .filter-actions {
-        flex-direction: column;
-        align-items: stretch;
+        gap: 0.375rem;
     }
 
     .btn-filter,
     .btn-reset {
-        min-width: auto;
-        flex: 1 1 100%;
+        flex: 1 1 calc(50% - 0.1875rem);
+        padding: 0.5rem 0.625rem;
+        font-size: 0.85rem;
     }
 
+    /* ----- Tipografía ----- */
     .label-title {
         font-size: 0.85rem;
     }
 
-    .checkbox-list {
-        gap: 0.5rem;
+    /* ----- Ocultar etiquetas ----- */
+    .label-hidden {
+        display: none;
     }
 }

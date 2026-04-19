@@ -73,35 +73,39 @@ Estructura general:
                         <input type="text" id="name" placeholder="Ej: Hipertrofia pierna..." aria-label="Buscar ejercicio por nombre">
                     </div>
 
-                    <div class="filter-group">
-                        <label for="filterMusculo" class="label-title h4">
-                            <i class="ri-focus-2-line"></i> Grupo muscular
-                        </label>
-                        <select id="filterMusculo" aria-label="Seleccionar grupo muscular">
-                            <option value="all">Todos los grupos</option>
-                            <option value="pectorales">Pectorales</option>
-                            <option value="cuádriceps">Cuádriceps</option>
-                            <option value="abdominales">Abdominales</option>
-                        </select>
-                    </div>
+                    <div class="filter-gruop filter-row">
+                        <!-- Filtro por Grupo muscular -->
+                        <div class="filter-group">
+                            <label for="filterMusculo" class="label-title h4 label-hidden">
+                                <i class="ri-focus-2-line"></i> Grupo muscular
+                            </label>
+                            <select id="filterMusculo" aria-label="Seleccionar grupo muscular">
+                                <option value="all">Grupo muscular</option>
+                                <option value="pectorales">Pectorales</option>
+                                <option value="cuádriceps">Cuádriceps</option>
+                                <option value="abdominales">Abdominales</option>
+                            </select>
+                        </div>
 
-                    <div class="filter-group">
-                        <label for="difficulty" class="label-title h4">
-                            <i class="ri-level-line"></i> Dificultad
-                        </label>
-                        <select id="difficulty" aria-label="Seleccionar dificultad del ejercicio">
-                            <option value="all">Todas</option>
-                            <option value="beg">Principiante</option>
-                            <option value="int">Intermedio</option>
-                            <option value="adv">Avanzado</option>
-                        </select>
+                        <!-- Filtro por Dificultad -->
+                        <div class="filter-group">
+                            <label for="difficulty" class="label-title h4 label-hidden">
+                                <i class="ri-level-line"></i> Dificultad
+                            </label>
+                            <select id="difficulty" aria-label="Seleccionar dificultad del ejercicio">
+                                <option value="all">Dificultad</option>
+                                <option value="beg">Principiante</option>
+                                <option value="int">Intermedio</option>
+                                <option value="adv">Avanzado</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="filter-group">
                         <label class="label-title h4">
                             <i class="ri-building-line"></i> Modalidad
                         </label>
-                        <div class="checkbox-list">
+                        <div class="checkbox-list filter-row">
                             <label class="checkbox-label">
                                 <input type="checkbox" value="gym" aria-label="Filtrar por Gimnasio">
                                 <span>Gimnasio</span>
@@ -113,7 +117,7 @@ Estructura general:
                         </div>
                     </div>
 
-                    <div class="filter-actions">
+                    <div class="filter-actions filter-row">
                         <button type="button" class="btn btn-filter btn-card">
                             <i class="ri-filter-3-line"></i> Aplicar Filtros
                         </button>

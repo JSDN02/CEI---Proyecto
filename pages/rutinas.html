@@ -71,42 +71,37 @@ Estructura general:
                         <label for="filterName" class="label-title h4">
                             <i class="ri-search-line"></i> Buscar por nombre
                         </label>
-                        <input 
-                            type="text" 
-                            id="filterName" 
-                            placeholder="Ej: Itadori, Sung Jin-Woo..."
-                            aria-label="Buscar rutina por nombre"
-                        >
+                        <input type="text" id="filterName" placeholder="Ej: Itadori, Sung Jin-Woo..."
+                            aria-label="Buscar rutina por nombre">
                     </div>
 
-                    <!-- Filtro por Enfoque -->
-                    <div class="filter-group">
-                        <label for="filterEnfoque" class="label-title h4">
-                            <i class="ri-focus-2-line"></i> Enfoque
-                        </label>
-                        <select id="filterEnfoque" aria-label="Seleccionar enfoque de rutinas">
-                            <option value="all">Todos los enfoques</option>
-                            <option value="Fuerza">Fuerza</option>
-                            <option value="Resistencia">Resistencia</option>
-                            <option value="Hipertrofia">Hipertrofia</option>
-                            <option value="Explosividad">Explosividad</option>
-                        </select>
-                    </div>
+                    <div class="filter-gruop filter-row">
+                        <!-- Filtro por Enfoque -->
+                        <div class="filter-group">
+                            <label for="filterEnfoque" class="label-title h4 label-hidden">
+                                <i class="ri-focus-2-line"></i> Enfoque
+                            </label>
+                            <select id="filterEnfoque" aria-label="Seleccionar enfoque de rutinas">
+                                <option value="all">Enfoque</option>
+                                <option value="Fuerza">Fuerza</option>
+                                <option value="Resistencia">Resistencia</option>
+                                <option value="Hipertrofia">Hipertrofia</option>
+                                <option value="Explosividad">Explosividad</option>
+                            </select>
+                        </div>
 
-                    <!-- Filtro por Dificultad -->
-                    <div class="filter-group">
-                        <label for="filterDifficulty" class="label-title h4">
-                            <i class="ri-level-line"></i> Dificultad
-                        </label>
-                        <select 
-                            id="filterDifficulty"
-                            aria-label="Seleccionar dificultad de rutinas"
-                        >
-                            <option value="all">Todas las dificultades</option>
-                            <option value="beg">Principiante</option>
-                            <option value="int">Intermedio</option>
-                            <option value="adv">Avanzado</option>
-                        </select>
+                        <!-- Filtro por Dificultad -->
+                        <div class="filter-group">
+                            <label for="filterDifficulty" class="label-title h4 label-hidden">
+                                <i class="ri-level-line"></i> Dificultad
+                            </label>
+                            <select id="filterDifficulty" aria-label="Seleccionar dificultad de rutinas">
+                                <option value="all">Dificultad</option>
+                                <option value="beg">Principiante</option>
+                                <option value="int">Intermedio</option>
+                                <option value="adv">Avanzado</option>
+                            </select>
+                        </div>
                     </div>
 
                     <!-- Filtro por Modalidad -->
@@ -114,20 +109,22 @@ Estructura general:
                         <label class="label-title h4">
                             <i class="ri-building-line"></i> Modalidad
                         </label>
-                        <div class="checkbox-list">
+                        <div class="checkbox-list filter-row">
                             <label class="checkbox-label">
-                                <input type="checkbox" name="modalidad" value="gym" aria-label="Filtrar rutinas de Gimnasio">
+                                <input type="checkbox" name="modalidad" value="gym"
+                                    aria-label="Filtrar rutinas de Gimnasio">
                                 <span>Gimnasio</span>
                             </label>
                             <label class="checkbox-label">
-                                <input type="checkbox" name="modalidad" value="home" aria-label="Filtrar rutinas en Casa">
+                                <input type="checkbox" name="modalidad" value="home"
+                                    aria-label="Filtrar rutinas en Casa">
                                 <span>Casa / Calistenia</span>
                             </label>
                         </div>
                     </div>
 
                     <!-- Botones de acción -->
-                    <div class="filter-actions">
+                    <div class="filter-actions filter-row">
                         <button type="button" class="btn btn-filter btn-card">
                             <i class="ri-filter-3-line"></i> Aplicar Filtros
                         </button>
@@ -148,7 +145,7 @@ Estructura general:
                         Plantilla de tarjeta de rutina (Ejemplo)
                         Reemplazar con generación dinámica a partir de rutinas.json  -->
 
-            <!--    article class="card">
+                    <!--    article class="card">
 
                         <header class="card-header">
                             <div class="card-banner-content">
@@ -192,7 +189,7 @@ Estructura general:
                             <a href="#" class="btn btn-download btn-card" target="_blank" rel="noopener">
                                 <i class="ri-download-2-fill"></i> Prueba
                             </a> -->
-                        </footer>
+                    </footer>
 
                     </article>
 
