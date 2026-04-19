@@ -25,9 +25,9 @@
           "tag": "versatil"
         },
         "metodologia": "Sobrecarga Progresiva y control del TUT (Time Under Tension).",
-        "enlace": "/rutinas/rutinaItadoriYuuji.html",
-        "descarga": "/assets/rutinas/RutinaDeEntrenamientoItadoriYuji.pdf",
-        "IMG_background": "/assets/images/personajes/itadoriYuuji/itadoriYuuji_B.jpg"
+        "enlace": "rutinas/rutinaItadoriYuuji.html",
+        "descarga": "../assets/documents/rutinas/RutinaDeEntrenamientoItadoriYuji.pdf",
+        "IMG_background": "assets/images/personajes/itadoriYuuji/itadoriYuuji_B.jpg"
       },
       "titulo": "El Despertar del Recipiente: Protocolo de Entrenamiento Itadori Yuji",
       "descripcion": "Esta guía de entrenamiento está diseñada para emular la versatilidad física y la potencia explosiva de Yuji Itadori. A través de una estructura de cuerpo completo (Full Body), buscaremos optimizar la respuesta neuromuscular y fomentar una adaptación física integral.",
@@ -501,9 +501,9 @@
           "tag": "calisthenics"
         },
         "metodologia": "Sobrecarga progresiva mediante peso corporal y carga externa improvisada (mochila).",
-        "enlace": "/rutinas/fisicoAnimeCasa.html",
-        "descarga": "/assets/rutinas/RutinaDeEntrenamientoCasero.pdf",
-        "IMG_background": "/assets/images/cardGeneral.jpg"
+        "enlace": "rutinas/fisicoAnimeCasa.html",
+        "descarga": "../assets/documents/rutinas/RutinaDeEntrenamientoCasero.pdf",
+        "IMG_background": "assets/images/cardGeneral.jpg"
       },
       "titulo": "Forjando el Cuerpo de un Guerrero: Entrenamiento de Anime en Casa",
       "descripcion": "Rutina enfocada en el desarrollo de un físico funcional, estético y explosivo usando principalmente peso corporal y objetos cotidianos. Se estructura en un sistema Full Body de alta frecuencia para maximizar la adaptación muscular.",
@@ -754,9 +754,9 @@
           "tag": "calisthenics"
         },
         "metodologia": "Sobrecarga progresiva con lastre improvisado y control del TUT.",
-        "enlace": "/rutinas/rutinaSungJinWoo.html",
-        "descarga": "/assets/rutinas/RutinaDeEntrenamientoSungJinWoo.pdf",
-        "IMG_background": "/assets/images/personajes/sungJinWoo/sungJinWoo_B.jpg"
+        "enlace": "rutinas/rutinaSungJinWoo.html",
+        "descarga": "../assets/documents/rutinas/RutinaDeEntrenamientoSungJinWoo.pdf",
+        "IMG_background": "assets/images/personajes/sungJinWoo/sungJinWoo_B.jpg"
       },
       "titulo": "Proyecto de Ascenso: Protocolo de Entrenamiento Sung Jin-Woo",
       "descripcion": "Rutina inspirada en la progresión constante de Sung Jin-Woo. Diseñada para transformar el físico mediante calistenia con lastre, enfocándose en fuerza, resistencia y desarrollo funcional a través de una estructura de 4 días.",

@@ -85,7 +85,7 @@ function renderizarRutinas(rutinas) {
 
         // 4. Aplicar la imagen de fondo al header usando el DOM
         const header = card.querySelector('.card-header');
-        header.style.backgroundImage = `linear-gradient(to top, #000000, transparent), url('${rutina.card.IMG_background}')`;
+        header.style.backgroundImage = `linear-gradient(to top, #000000, transparent), url('../${rutina.card.IMG_background}')`;
 
         // 5. Añadimos al contenedor
         contenedor.appendChild(card);
