@@ -1012,6 +1012,7 @@ tbody tr:nth-child(odd) {
 
     /* Ajuste de footer para tablets - Drawer/Pop-up */
     .footer {
+        padding-block: 4rem;
         position: fixed;
         bottom: 0;
         left: 0;
@@ -1030,7 +1031,7 @@ tbody tr:nth-child(odd) {
     }
 
     .footer__block {
-        margin-block: 2rem;
+        margin-block: 4rem;
         display: flex;
         flex-flow: column nowrap;
         justify-content: start;
@@ -1052,8 +1053,40 @@ tbody tr:nth-child(odd) {
     }
 
     .footer__bottom-phrase {
-    align-items: start;
-}
+        align-items: start;
+    }
+
+    /* FILTROS Y CONTENIDO */
+    .main-content {
+        flex-direction: column;
+    }
+
+    .aside {
+        flex: 0 0 auto;
+        width: 100%;
+        height: auto;
+        position: static;
+        border-right: none;
+        border-bottom: var(--border-line);
+    }
+
+    .aside__filters {
+        gap: 1rem;
+    }
+
+    .filter-row {
+        flex-flow: row wrap;
+        gap: 1rem;
+    }
+
+    .checkbox-label, .filter-group, .btn-card {
+        flex: 1 1 45%; 
+    }
+
+    .label-hidden {
+        display: none;
+    }
+
 
     body.menu-open {
         overflow: hidden;
