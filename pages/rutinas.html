@@ -18,6 +18,7 @@ Estructura general:
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <script defer src="../js/rutinas-list.js"></script>
     <script defer src="../js/rutinas-filter.js"></script>
+    <script defer src="../js/menu-burger.js"></script>
     <title>Graziano Fit</title>
 </head>
 
@@ -38,6 +39,7 @@ Estructura general:
                     <li><a href="rutinas.html" class="navbar-item active" aria-label="Rutinas">Rutinas</a></li>
                     <li><a href="ejercicios.html" class="navbar-item" aria-label="Ejercicio">Ejercicios</a></li>
                 </ul>
+                <i class="ri-menu-line"></i>
             </div>
         </nav>
 
@@ -75,7 +77,7 @@ Estructura general:
                             aria-label="Buscar rutina por nombre">
                     </div>
 
-                    <div class="filter-gruop filter-row">
+                    <div class="aside__filters filter-gruop filter-row">
                         <!-- Filtro por Enfoque -->
                         <div class="filter-group">
                             <label for="filterEnfoque" class="label-title h4 label-hidden">
@@ -93,7 +95,7 @@ Estructura general:
                         <!-- Filtro por Dificultad -->
                         <div class="filter-group">
                             <label for="filterDifficulty" class="label-title h4 label-hidden">
-                                <i class="ri-level-line"></i> Dificultad
+                                <i class="ri-shield-star-line"></i> Dificultad
                             </label>
                             <select id="filterDifficulty" aria-label="Seleccionar dificultad de rutinas">
                                 <option value="all">Dificultad</option>
@@ -126,7 +128,7 @@ Estructura general:
                     <!-- Botones de acción -->
                     <div class="filter-actions filter-row">
                         <button type="button" class="btn btn-filter btn-card">
-                            <i class="ri-filter-3-line"></i> Aplicar Filtros
+                            <i class="ri-filter-3-line"></i> <span>Aplicar Filtros</span>
                         </button>
                         <button type="button" class="btn btn-reset btn-card">
                             <i class="ri-refresh-line"></i> Limpiar
