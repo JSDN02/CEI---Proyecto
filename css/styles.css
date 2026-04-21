@@ -178,7 +178,7 @@ h4,
 p,
 .p {
     font-weight: 400;
-    font-size: 1rem;
+    font-size: clamp(.75rem, 3vw, 1rem);
     line-height: 1.4;
 }
 
@@ -857,6 +857,12 @@ tbody tr:nth-child(odd) {
     background-color: var(--bg-tertiary);
 }
 
+/* Contenedor de tabla para responsividad */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
 /* Legacy support - if html uses custom table elements */
 .rutina-table {
     width: 100%;
@@ -1098,6 +1104,21 @@ tbody tr:nth-child(odd) {
         display: none;
     }
 
+    /* Ajustes para tablas en tablets */
+    .table-container {
+        overflow-x: auto;
+    }
+
+    .rutina-table {
+        min-width: 600px; /* Asegura que la tabla no se comprima demasiado */
+    }
+
+    th,
+    td {
+        padding: 8px 10px; /* Reducir padding en tablets */
+        font-size: 0.9rem;
+    }
+
 
     body.menu-open {
         overflow: hidden;
@@ -1124,7 +1145,24 @@ tbody tr:nth-child(odd) {
     }
 
     .hero-detalle {
-        height: 40vh;
+        height: 60vh;
+    }
+
+    /* Ajustes para tablas en móviles */
+    .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* Suave scroll en iOS */
+    }
+
+    .rutina-table {
+        min-width: 600px; /* Mantiene el ancho mínimo */
+        font-size: 0.8rem; /* Fuente más pequeña */
+    }
+
+    th,
+    td {
+        padding: 6px 8px; /* Padding aún más reducido */
+        white-space: nowrap; /* Evita que el texto se rompa */
     }
 
 }
