@@ -372,8 +372,7 @@ li {
     HERO
    ========================================================================== */
 .hero {
-    height: 93vh;
-    aspect-ratio: 16 / 9;
+    height: 90vh;
     background-image: linear-gradient(to top, #000000, transparent), url('../assets/images/backgrounds/tojiFushiguroTemporal.png');
     background-size: cover;
     background-position: center;
@@ -988,6 +987,16 @@ tbody tr:nth-child(odd) {
 /* Responsive adjustments Tablets */
 @media (max-width: 768px) {
 
+    .hero {
+        height: 60vh;
+
+        background-origin: border-box;
+    }
+
+    .hero-routine {
+        height: 40vh;
+    }
+
     /* PAGINA DE INICIO */
     /* Ajuste de navegación para tablets */
     .navbar {
@@ -1079,8 +1088,10 @@ tbody tr:nth-child(odd) {
         gap: 1rem;
     }
 
-    .checkbox-label, .filter-group, .btn-card {
-        flex: 1 1 45%; 
+    .checkbox-label,
+    .filter-group,
+    .btn-card {
+        flex: 1 1 45%;
     }
 
     .label-hidden {
@@ -1107,4 +1118,13 @@ tbody tr:nth-child(odd) {
     .img-character {
         max-height: 400px;
     }
+
+    .hero-routine {
+        height: 25vh;
+    }
+
+    .hero-detalle {
+        height: 40vh;
+    }
+
 }
