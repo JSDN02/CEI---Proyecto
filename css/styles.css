@@ -1138,7 +1138,14 @@ tbody tr:nth-child(odd) {
 
     /* Ajustes para tablas en móviles */
     .table-container {
+        width: 100%;
+        overflow-x: auto;
         -webkit-overflow-scrolling: touch; /* Suave scroll en iOS */
+    }
+
+    .table-container table {
+        width: 100%;
+        min-width: max-content;
     }
 
     .rutina-table {
