@@ -11,24 +11,38 @@
             "modalidades": ["gym", "home"],
             "descripcion": "Las flexiones son un ejercicio fundamental de calistenia que fortalece el pecho, tríceps y hombros. Consisten en bajar el cuerpo hacia el suelo y empujar hacia arriba usando solo el peso corporal.",
             "imagenes": [
-                "https://via.placeholder.com/400x300?text=Flexiones+1",
-                "https://via.placeholder.com/400x300?text=Flexiones+2"
+                {
+                    "webp": "../../assets/images/personajes/tojiFushiguro/tojiExamples/webp/tojiPushUpsEasy.webp",
+                    "jpg": "../../assets/images/personajes/tojiFushiguro/tojiExamples/tojiPushUpsEasy.png"
+                }
             ],
             "variaciones": [
                 {
                     "tipo": "Flexiones estándar",
                     "dificultad": "Principiante",
-                    "descripcion": "Posición básica con manos a ancho de hombros."
+                    "descripcion": "Posición básica con manos a ancho de hombros.",
+                    "imagen": {
+                        "webp": "../../assets/images/personajes/tojiFushiguro/tojiExamples/webp/tojiPushUpsEasy.webp",
+                        "jpg": "../../assets/images/personajes/tojiFushiguro/tojiExamples/tojiPushUpsEasy.png"
+                    }
                 },
                 {
                     "tipo": "Flexiones diamante",
                     "dificultad": "Intermedio",
-                    "descripcion": "Manos juntas formando un diamante, enfocado en tríceps."
+                    "descripcion": "Manos juntas formando un diamante, enfocado en tríceps.",
+                    "imagen": {
+                        "webp": "../../assets/images/personajes/tojiFushiguro/tojiExamples/webp/tojiPushUpsMid.webp",
+                        "jpg": "../../assets/images/personajes/tojiFushiguro/tojiExamples/tojiPushUpsMid.png"
+                    }
                 },
                 {
                     "tipo": "Flexiones con elevación",
                     "dificultad": "Avanzado",
-                    "descripcion": "Pies elevados en una superficie, aumenta la dificultad."
+                    "descripcion": "Pies elevados en una superficie, aumenta la dificultad.",
+                    "imagen": {
+                        "webp": "../../assets/images/personajes/tojiFushiguro/tojiExamples/webp/tojiPushUpsHard.webp",
+                        "jpg": "../../assets/images/personajes/tojiFushiguro/tojiExamples/tojiPushUpsHard.png"
+                    }
                 }
             ]
         },
@@ -43,24 +57,38 @@
             "modalidades": ["gym", "home"],
             "descripcion": "Las sentadillas son un ejercicio compuesto que fortalece las piernas y glúteos. Consisten en bajar el cuerpo como si te sentaras en una silla imaginaria y luego levantarte.",
             "imagenes": [
-                "https://via.placeholder.com/400x300?text=Sentadillas+1",
-                "https://via.placeholder.com/400x300?text=Sentadillas+2"
+                {
+                    "webp": "../../assets/images/personajes/tojiFushiguro/tojiExamples/webp/tojiSquatsEasy.webp",
+                    "jpg": "../../assets/images/personajes/tojiFushiguro/tojiExamples/tojiSquatsEasy.png"
+                }
             ],
             "variaciones": [
                 {
                     "tipo": "Sentadillas básicas",
                     "dificultad": "Principiante",
-                    "descripcion": "Posición estándar con pies a ancho de hombros."
+                    "descripcion": "Posición estándar con pies a ancho de hombros.",
+                    "imagen": {
+                        "webp": "../../assets/images/personajes/tojiFushiguro/tojiExamples/webp/tojiSquatsEasy.webp",
+                        "jpg": "../../assets/images/personajes/tojiFushiguro/tojiExamples/tojiSquatsEasy.png"
+                    }
                 },
                 {
                     "tipo": "Sentadillas búlgaras",
                     "dificultad": "Intermedio",
-                    "descripcion": "Un pie elevado detrás, mayor equilibrio y fuerza unilateral."
+                    "descripcion": "Un pie elevado detrás, mayor equilibrio y fuerza unilateral.",
+                    "imagen": {
+                        "webp": "../../assets/images/personajes/tojiFushiguro/tojiExamples/webp/tojiSquatsMid.webp",
+                        "jpg": "../../assets/images/personajes/tojiFushiguro/tojiExamples/tojiSquatsMid.png"
+                    }
                 },
                 {
                     "tipo": "Sentadillas con salto",
                     "dificultad": "Avanzado",
-                    "descripcion": "Agregar un salto explosivo al levantarse."
+                    "descripcion": "Agregar un salto explosivo al levantarse.",
+                    "imagen": {
+                        "webp": "../../assets/images/personajes/tojiFushiguro/tojiExamples/webp/tojiSquatsHard.webp",
+                        "jpg": "../../assets/images/personajes/tojiFushiguro/tojiExamples/tojiSquatsHard.png"
+                    }
                 }
             ]
         },
@@ -75,24 +103,38 @@
             "modalidades": ["gym", "home"],
             "descripcion": "Los abdominales fortalecen el core y mejoran la estabilidad central. Consisten en levantar el torso desde el suelo hacia las rodillas manteniendo las piernas flexionadas.",
             "imagenes": [
-                "https://via.placeholder.com/400x300?text=Abdominales+1",
-                "https://via.placeholder.com/400x300?text=Abdominales+2"
+                {
+                    "webp": "../../assets/images/personajes/tojiFushiguro/tojiExamples/webp/tojiAbdsMid.webp",
+                    "jpg": "../../assets/images/personajes/tojiFushiguro/tojiExamples/tojiAbdsMid.png"
+                }
             ],
             "variaciones": [
                 {
                     "tipo": "Crunch básico",
                     "dificultad": "Principiante",
-                    "descripcion": "Levantar el torso manteniendo las piernas en el suelo."
+                    "descripcion": "Levantar el torso manteniendo las piernas en el suelo.",
+                    "imagen": {
+                        "webp": "../../assets/images/personajes/tojiFushiguro/tojiExamples/webp/tojiAbdsEasy.webp",
+                        "jpg": "../../assets/images/personajes/tojiFushiguro/tojiExamples/tojiAbdsEasy.png"
+                    }
                 },
                 {
                     "tipo": "Plank",
                     "dificultad": "Intermedio",
-                    "descripcion": "Mantener la posición isométrica con el cuerpo recto."
+                    "descripcion": "Mantener la posición isométrica con el cuerpo recto.",
+                    "imagen": {
+                        "webp": "../../assets/images/personajes/tojiFushiguro/tojiExamples/webp/tojiAbdsMid.webp",
+                        "jpg": "../../assets/images/personajes/tojiFushiguro/tojiExamples/tojiAbdsMid.png"
+                    }
                 },
                 {
                     "tipo": "Russian twists",
                     "dificultad": "Avanzado",
-                    "descripcion": "Girar el torso lateralmente con las piernas elevadas."
+                    "descripcion": "Girar el torso lateralmente con las piernas elevadas.",
+                    "imagen": {
+                        "webp": "../../assets/images/personajes/tojiFushiguro/tojiExamples/webp/tojiAbdsHard.webp",
+                        "jpg": "../../assets/images/personajes/tojiFushiguro/tojiExamples/tojiAbdsHard.png"
+                    }
                 }
             ]
         }

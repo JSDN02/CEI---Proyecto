@@ -1,54 +1,55 @@
-// Configuración
-const JSON_URL = '../data/rutinas.json';
-const grid = document.getElementById('routineGrid');
-grid.addEventListener('click', (e) => {
-    // Buscamos si el clic fue en el botón o algo dentro de él
-    const boton = e.target.closest('.ver-rutina');
+/* ==========================================================================
+    rutinas-list.js
+    Descripción:
+    - Carga las rutinas desde data/rutinas.json
+    - Renderiza las cards dinámicas en la página de rutinas
+    - Navega al detalle de rutina al hacer clic
+   ========================================================================== */
 
-    if (boton) {
-        // Extraemos la "marca" que dejamos antes
-        const idRutina = boton.dataset.rutinaId;
-        // CAMBIO: El nombre debe coincidir con la función definida abajo
-        verDetalle(idRutina);
-    }
-});
+const JSON_URL = '../data/rutinas.json'
+const grid = document.getElementById('routineGrid')
+
+if (grid) {
+    grid.addEventListener('click', (e) => {
+        const boton = e.target.closest('.ver-rutina')
+        if (!boton) return
+
+        const idRutina = boton.dataset.rutinaId
+        verDetalle(idRutina)
+    })
+}
 
 async function cargarRutinas() {
     try {
-        const response = await fetch(JSON_URL);
-        if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+        const response = await fetch(JSON_URL)
+        if (!response.ok) throw new Error(`Error HTTP: ${response.status}`)
 
-        const data = await response.json();
-        renderizarRutinas(data.rutinas);
+        const data = await response.json()
+        renderizarRutinas(data.rutinas)
 
-        // Pasar las rutinas al filtrador si está disponible
         if (window.filtroRutinas) {
-            window.filtroRutinas.setRutinas(data.rutinas);
+            window.filtroRutinas.setRutinas(data.rutinas)
         }
-
     } catch (error) {
-        console.error("Error al cargar el protocolo:", error);
+        console.error('Error al cargar el protocolo:', error)
     }
 }
 
 function renderizarRutinas(rutinas) {
-    const contenedor = document.getElementById('routineGrid');
-    if (!contenedor) return;
+    const contenedor = document.getElementById('routineGrid')
+    if (!contenedor) return
 
     rutinas.forEach(rutina => {
-        // 1. Creamos el elemento contenedor y le asignamos la clase
-        const card = document.createElement('div');
-        card.classList.add('card-item'); // Cambiado a 'card-item' para evitar conflicto con el article
+        const card = document.createElement('div')
+        card.classList.add('card-item')
 
-        // 2. Definimos la función de tags dentro o fuera del bucle (fuera es mejor para rendimiento)
         function generarTags(modalidad) {
-            if (modalidad.tipo === "Versátil") {
-                return `<span class="tag gym">Gimnasio</span><span class="tag calisthenics">Calistenia</span>`;
+            if (modalidad.tipo === 'Versátil') {
+                return `<span class="tag gym">Gimnasio</span><span class="tag calisthenics">Calistenia</span>`
             }
-            return `<span class="tag ${modalidad.tag}">${modalidad.tipo}</span>`;
+            return `<span class="tag ${modalidad.tag}">${modalidad.tipo}</span>`
         }
 
-        // 3. Inyectamos el HTML
         card.innerHTML = `
             <article class="card">
                 <header class="card-header">
@@ -81,15 +82,21 @@ function renderizarRutinas(rutinas) {
                     </a>
                 </footer>
             </article>
-        `;
+        `
 
-        // 4. Aplicar la imagen de fondo al header usando el DOM
-        const header = card.querySelector('.card-header');
-        header.style.backgroundImage = `linear-gradient(to top, #000000, transparent), url('../${rutina.card.IMG_background}')`;
+        const header = card.querySelector('.card-header')
+        if (header) {
+            header.style.backgroundImage = `linear-gradient(to top, #000000, transparent), url('../${rutina.card.IMG_background}')`
+        }
 
-        // 5. Añadimos al contenedor
-        contenedor.appendChild(card);
-    });
+        contenedor.appendChild(card)
+    })
+}
+
+document.addEventListener('DOMContentLoaded', cargarRutinas)
+
+function verDetalle(id) {
+    window.location.href = `rutinas/detalle-rutina.html?id=${id}`
 }
 
 document.addEventListener('DOMContentLoaded', cargarRutinas);

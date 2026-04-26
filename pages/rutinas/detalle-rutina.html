@@ -1,11 +1,22 @@
 <!--
-Descripción: Este archivo "detalle-rutina.html" contiene la pagina de detalle de rutina.
-Estructura general:
-- Encabezado
-    - Barra de navegación
-    - Sección Hero
-- 
-- 
+========================================================
+DETALLE-RUTINA.HTML - PÁGINA DE DETALLE DE RUTINA
+========================================================
+Descripción:
+Página de detalle individual de una rutina específica.
+
+Funcionalidad:
+- Visualización dinámica de datos de la rutina
+- Tabla de ejercicios y series
+- Sistema de acordeón para conceptos clave
+- Notas finales y consejos personalizados
+
+Dependencias:
+- rutinas-detalle.js → renderizado dinámico
+- accordion.js → lógica de acordeones
+- menu-burger.js → navegación mobile
+- styles.css → estilos generales
+========================================================
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -18,9 +29,9 @@ Estructura general:
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../../css/styles.css">
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Cormorant+Garamond:wght@300..700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Cormorant+Garamond:wght@300..700"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
     <script defer src="../../js/rutinas-detalle.js"></script>
     <script defer src="../../js/accordion.js"></script>
     <script defer src="../../js/menu-burger.js"></script>
@@ -28,22 +39,27 @@ Estructura general:
 </head>
 
 <body>
-    <!--
-    Sección de Encabezado
-    Descripción: En esta sección tenemos el encabezado (Nav + Hero) ...
-    -->
+    <!-- ====================================================
+    HEADER: Navegación + Hero
+    ==================================================== -->
     <header class="main-header">
-        <!-- Navegación -->
+        <!-- NAVBAR -->
+        <!-- Contiene:
+            - Logo
+            - Navegación principal (minimizada)
+            - Menú hamburguesa (mobile)
+        -->
         <nav class="section navigation">
             <div class="container navigation__block">
                 <div class="logo">
-                    <a href="../../index.html" aria-label="Inicio" title="Inicio">Graziano <span class="text-brand-soft">Fit   </span></a>
+                    <a href="../../index.html" aria-label="Inicio" title="Inicio">Graziano <span class="text-brand-soft">Fit</span></a>
                 </div>
+                <!-- ICONO DE MENÚ MOBILE -->
                 <i class="ri-menu-line"></i>
             </div>
         </nav>
 
-        <!-- Banner Hero -->
+        <!-- HERO SECTION DINÁMICO -->
         <div class="section hero hero-detalle">
             <div class="container hero__block-detalle">
                 <div class="hero__text-detalle">
@@ -52,27 +68,29 @@ Estructura general:
             </div>
         </div>
     </header>
-    <!--
-    Sección de Encabezado (Final)
-    -->
 
-    <!--
-    Sección de Rutina
-    -->
+
+    <!-- ====================================================
+    MAIN - CONTENIDO PRINCIPAL
+    ==================================================== -->
     <main>
+        <!-- SECTION - INFORMACIÓN DE LA RUTINA -->
         <div class="section training">
             <div class="container training__block">
 
+                <!-- DESCRIPCIÓN DE LA RUTINA -->
                 <article class="training__content">
                     <!-- Contenido dinámico de descripción -->
                 </article>
 
+                <!-- CONCEPTOS CLAVE -->
                 <article class="training__content">
                     <!-- Contenido dinámico de conceptos -->
                 </article>
             </div>
         </div>
 
+        <!-- SECTION - DETALLES Y TABLA DE EJERCICIOS -->
         <div class="section detail">
             <div class="container detail__block">
                 <div id="detalle-container-tablas">
@@ -82,13 +100,14 @@ Estructura general:
                 <p id="nota-final"><!-- Nota dinámica --></p>
             </div>
         </div>
-    </main>
-    <!--
-    Sección Footer
-    Descripción: En esta sección tenemos la notas del pie de pagina
-    -->
+
+
+    <!-- ====================================================
+    FOOTER
+    ==================================================== -->
     <footer class="section footer">
         <div class="container footer__block">
+            <!-- INFO BRAND -->
             <div class="footer__info">
                 <div class="logo">
                     <a href="../../index.html">Graziano <span class="text-brand-soft">Fit</span></a>
@@ -96,6 +115,7 @@ Estructura general:
                 <p>Lleva tu cuerpo al siguiente nivel con la disciplina del anime.</p>
             </div>
 
+            <!-- NAVEGACIÓN SECUNDARIA -->
             <div class="footer__nav">
                 <div class="footer-navigation">
                     <h2 class="h4">Explorar</h2>
@@ -107,6 +127,7 @@ Estructura general:
                 </div>
             </div>
 
+            <!-- REDES -->
             <div class="footer__social">
                 <h2 class="h4">Comunidad</h2>
                 <div class="social-links">
@@ -118,14 +139,15 @@ Estructura general:
                         rel="noopener noreferrer">
                         <i class="ri-discord-fill"></i>
                     </a>
-                    <a href="#" target="_blank" aria-label="Instagram">
+                    <a href="https://www.instagram.com/santigraziano_?igsh=bG01YndianNubWJx" target="_blank" aria-label="Instagram">
                         <i class="ri-instagram-fill"></i>
                     </a>
                 </div>
             </div>
         </div>
 
-        <div class=" container footer__bottom">
+        <!-- COPYRIGHT -->
+        <div class="container footer__bottom">
             <p>&copy; 2024 Graziano Fit. Todos los derechos reservados.</p>
             <div class="footer__bottom-phrase">
                 <span class="text-gradient st-footer">Stay Hard</span>

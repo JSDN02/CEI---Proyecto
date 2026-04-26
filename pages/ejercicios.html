@@ -1,11 +1,22 @@
 <!--
-Descripción: Este archivo "ejercicios.html" contiene la pagina de ejercicios.
-Estructura general:
-- Encabezado
-    - Barra de navegación
-    - Sección Hero
-- 
-- 
+========================================================
+EJERCICIOS.HTML - PÁGINA DE EJERCICIOS
+========================================================
+Descripción:
+Página principal de la biblioteca de ejercicios.
+
+Funcionalidad:
+- Listado dinámico de ejercicios (JS)
+- Sistema de filtrado avanzado
+- Búsqueda por nombre
+- Filtros por grupo muscular, dificultad y modalidad
+
+Dependencias:
+- ejercicios-list.js → renderizado de tarjetas
+- ejercicios-filter.js → lógica de filtrado
+- menu-burger.js → navegación mobile
+- styles.css → estilos generales
+========================================================
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -17,9 +28,9 @@ Estructura general:
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../css/styles.css">
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Cormorant+Garamond:wght@300..700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Cormorant+Garamond:wght@300..700&family=Material+Symbols+Outlined"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
     <meta name="description" content="Explora todos los ejercicios disponibles y filtra por grupo muscular, tipo o dificultad.">
     <script defer src="../js/ejercicios-filter.js"></script>
     <script defer src="../js/ejercicios-list.js"></script>
@@ -28,12 +39,16 @@ Estructura general:
 </head>
 
 <body>
-    <!--
-    Sección de Encabezado
-    Descripción: En esta sección tenemos el encabezado (Nav + Hero) ...
-    -->
+    <!-- ====================================================
+    HEADER: Navegación + Hero
+    ==================================================== -->
     <header class="main-header">
-        <!-- Navegación -->
+        <!-- NAVBAR -->
+        <!-- Contiene:
+            - Logo
+            - Navegación principal
+            - Menú hamburguesa (mobile)
+        -->
         <nav class="section navigation">
             <div class="container navigation__block">
                 <div class="logo">
@@ -48,7 +63,7 @@ Estructura general:
             </div>
         </nav>
 
-        <!-- Banner Hero -->
+        <!-- HERO SECTION -->
         <section class="section hero hero-routine">
             <div class="container hero__block">
                 <div class="hero__text">
@@ -56,32 +71,38 @@ Estructura general:
                 </div>
             </div>
         </section>
-    </header>
-    <!--
-    Sección de Encabezado (Final)
-    -->
 
-    <!--
-    Sección de Aside
-    Descripción: En esta sección la barra de busqueda lateral ...
-    -->
+    </header>
+
+
+    <!-- ====================================================
+    MAIN - CONTENIDO PRINCIPAL
+    ==================================================== -->
     <main class="main-content">
+
+        <!-- ASIDE - FILTROS DE EJERCICIOS -->
         <aside class="aside">
             <div class="aside__block">
                 <div class="aside__header">
                     <h2 class="h3">Filtrador de ejercicios</h2>
                 </div>
-
+                <!-- FORMULARIO DE FILTROS -->
+                <!-- Nota:
+                    - Solo usa JS (no backend)
+                    - No tiene action ni method
+                -->
                 <form class="aside__filters" name="filtroEjercicios">
+                    <!-- BUSCADOR POR NOMBRE -->
                     <div class="filter-group">
-                        <label for="name" class="label-title h4">
+                        <label for="filterName" class="label-title h4">
                             <i class="ri-search-line"></i> Buscar por nombre
                         </label>
-                        <input type="text" id="name" placeholder="Ej: Hipertrofia pierna..." aria-label="Buscar ejercicio por nombre">
+                        <input type="text" id="filterName" placeholder="Ej: Sentadilla, Flexiones..." aria-label="Buscar ejercicio por nombre">
                     </div>
 
-                    <div class="aside__filters filter-group filter-row">
-                        <!-- Filtro por Grupo muscular -->
+                    <!-- FILTROS COMBINADOS -->
+                    <div class="filter-group filter-row">
+                        <!-- GRUPO MUSCULAR -->
                         <div class="filter-group">
                             <label for="filterMusculo" class="label-title h4 label-hidden">
                                 <i class="ri-focus-2-line"></i> Grupo muscular
@@ -94,7 +115,7 @@ Estructura general:
                             </select>
                         </div>
 
-                        <!-- Filtro por Dificultad -->
+                        <!-- DIFICULTAD -->
                         <div class="filter-group">
                             <label for="difficulty" class="label-title h4 label-hidden">
                                 <i class="ri-shield-star-line"></i> Dificultad
@@ -108,6 +129,7 @@ Estructura general:
                         </div>
                     </div>
 
+                    <!-- MODALIDAD -->
                     <div class="filter-group">
                         <label class="label-title h4">
                             <i class="ri-building-line"></i> Modalidad
@@ -124,6 +146,7 @@ Estructura general:
                         </div>
                     </div>
 
+                    <!-- ACCIONES -->
                     <div class="filter-actions filter-row">
                         <button type="button" class="btn btn-filter btn-card" aria-label="Aplicar filtros a ejercicios" title="Aplicar filtros a ejercicios">
                             <i class="ri-filter-3-line"></i> Aplicar Filtros
@@ -136,28 +159,33 @@ Estructura general:
             </div>
         </aside>
 
+
+        <!-- SECTION - BIBLIOTECA DE EJERCICIOS -->
         <section class="section content">
             <div class="container content">
                 <h2>Biblioteca de Ejercicios</h2>
+                <!-- GRID DINÁMICO (JS) -->
                 <div id="exerciseGrid" class="content__grid">
-
-                    <!-- Las tarjetas se generan dinámicamente -->
-
+                    <!--
+                    ====================================================
+                    PLANTILLA DE TARJETA DE EJERCICIO (REFERENCIA)
+                    ====================================================
+                    Generado dinámicamente desde JS + JSON
+                    ====================================================
+                    -->
                 </div>
             </div>
         </section>
     </main>
 
-    <!--
-    Sección de Aside (Final)
-    -->
+    </main>
 
-    <!--
-    Sección Footer
-    Descripción: En esta sección tenemos la notas del pie de pagina
-    -->
-    <footer class="section footer">
+
+    <!-- ====================================================
+    FOOTER
+    ==================================================== <footer class="section footer">
         <div class="container footer__block">
+            <!-- INFO BRAND -->
             <div class="footer__info">
                 <div class="logo">
                     <a href="../index.html" aria-label="Inicio" title="Inicio">Graziano <span class="text-brand-soft" >Fit</span></a>
@@ -165,6 +193,8 @@ Estructura general:
                 <p>Lleva tu cuerpo al siguiente nivel con la disciplina del anime.</p>
             </div>
 
+            <!-- NAVEGACIÓN SECUNDARIA -->
+            <!-- NAVEGACIÓN SECUNDARIA -->
             <div class="footer__nav">
                 <div class="footer-navigation">
                     <h2 class="h4">Explorar</h2>
@@ -176,6 +206,8 @@ Estructura general:
                 </div>
             </div>
 
+            <!-- REDES -->
+            <!-- REDES -->
             <div class="footer__social">
                 <h2 class="h4">Comunidad</h2>
                 <div class="social-links">
@@ -187,14 +219,14 @@ Estructura general:
                         rel="noopener noreferrer">
                         <i class="ri-discord-fill"></i>
                     </a>
-                    <a href="#" target="_blank" aria-label="Instagram" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/santigraziano_?igsh=bG01YndianNubWJx" target="_blank" aria-label="Instagram" rel="noopener noreferrer">
                         <i class="ri-instagram-fill"></i>
                     </a>
                 </div>
             </div>
         </div>
-
-        <div class=" container footer__bottom">
+        <!-- COPYRIGHT -->
+        <div class="container footer__bottom">
             <p>&copy; 2024 Graziano Fit. Todos los derechos reservados.</p>
             <div class="footer__bottom-phrase">
                 <span class="text-gradient st-footer">Stay Hard</span>

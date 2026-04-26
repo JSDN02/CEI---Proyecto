@@ -1,56 +1,48 @@
-/**
- * accordion.js
- * Descripción: Script para crear un efecto acordeón entre h3 y las tablas correspondientes
- * Permite expandir/colapsar tablas al hacer clic en los h3
- */
+/* ==========================================================================
+    accordion.js
+    Descripción:
+    - Controla la apertura y cierre de bloques tipo acordeón
+    - Detecta h3 en los bloques de detalle de rutina o ejercicio
+    - Agrega accesibilidad con role y tabindex
+   ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-    initializeAccordion();
-});
+    initializeAccordion()
+})
 
 function initializeAccordion() {
-    // Seleccionar todos los h3 dentro de detail__routine y detalle__calistenia
-    const headings = document.querySelectorAll('.detail__routine h3, .detalle__calistenia h3');
+    const headings = document.querySelectorAll('.detail__routine h3, .detalle__calistenia h3')
 
     headings.forEach((heading) => {
-        // Agregar clase de acordeón y hacer clickeable
-        heading.style.cursor = 'pointer';
-        heading.setAttribute('role', 'button');
-        heading.setAttribute('tabindex', '0');
-        
+        heading.style.cursor = 'pointer'
+        heading.setAttribute('role', 'button')
+        heading.setAttribute('tabindex', '0')
 
-        // Buscar el siguiente elemento .table-container
-        const tableContainer = heading.nextElementSibling;
+        const tableContainer = heading.nextElementSibling
 
         if (tableContainer && tableContainer.classList.contains('table-container')) {
-            // Agregar clase de acordeón al contenedor de tabla
-            tableContainer.classList.add('accordion-content');
+            tableContainer.classList.add('accordion-content')
 
-            // Estado inicial: cerrado
-            // NO agregamos la clase 'active' para que comience cerrada
-
-            // Evento click para toggle
             heading.addEventListener('click', () => {
-                toggleAccordion(tableContainer);
-            });
+                toggleAccordion(tableContainer)
+            })
 
-            // Evento tecla Enter para accesibilidad
             heading.addEventListener('keypress', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    toggleAccordion(tableContainer);
+                    e.preventDefault()
+                    toggleAccordion(tableContainer)
                 }
-            });
+            })
         }
-    });
+    })
 }
 
 function toggleAccordion(element) {
-    element.classList.toggle('active-accordion');
-    const heading = element.previousElementSibling;
-    const isActive = element.classList.contains('active-accordion');
+    element.classList.toggle('active-accordion')
+    const heading = element.previousElementSibling
+    const isActive = element.classList.contains('active-accordion')
     if (heading && heading.tagName === 'H3') {
-        heading.style.backgroundColor = isActive ? window.rutinaColor : '';
-        heading.style.color = isActive ? 'white' : '';
+        heading.style.backgroundColor = isActive ? window.rutinaColor : ''
+        heading.style.color = isActive ? 'white' : ''
     }
 }

@@ -1,59 +1,62 @@
-// Configuración
-const JSON_URL = '../data/ejercicios.json';
-const grid = document.getElementById('exerciseGrid');
+/* ==========================================================================
+    ejercicios-list.js
+    Descripción:
+    - Carga los ejercicios desde data/ejercicios.json
+    - Renderiza cards dinámicas en exerciseGrid
+    - Redirige al detalle de cada ejercicio
+   ========================================================================== */
+
+const JSON_URL = '../data/ejercicios.json'
+const grid = document.getElementById('exerciseGrid')
 
 if (grid) {
     grid.addEventListener('click', (e) => {
-        const botonDetalle = e.target.closest('.ver-ejercicio');
+        const botonDetalle = e.target.closest('.ver-ejercicio')
+        if (!botonDetalle) return
 
-        if (botonDetalle) {
-            const idEjercicio = botonDetalle.dataset.ejercicioId;
-            verDetalle(idEjercicio);
-            return;
-        }
-    });
+        const idEjercicio = botonDetalle.dataset.ejercicioId
+        verDetalle(idEjercicio)
+    })
 } else {
-    console.warn('No se encontró el contenedor #exerciseGrid');
+    console.warn('No se encontró el contenedor #exerciseGrid')
 }
 
 async function cargarEjercicios() {
     try {
-        const response = await fetch(JSON_URL);
-        if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+        const response = await fetch(JSON_URL)
+        if (!response.ok) throw new Error(`Error HTTP: ${response.status}`)
 
-        const data = await response.json();
-        renderizarEjercicios(data.ejercicios);
+        const data = await response.json()
+        renderizarEjercicios(data.ejercicios)
 
-        // Actualizar el filtro con las nuevas tarjetas
         if (window.filtroEjercicios) {
-            window.filtroEjercicios.actualizarCards();
-            window.filtroEjercicios.aplicarFiltros();
+            window.filtroEjercicios.actualizarCards()
+            window.filtroEjercicios.aplicarFiltros()
         }
-
     } catch (error) {
-        console.error("Error al cargar los ejercicios:", error);
+        console.error('Error al cargar los ejercicios:', error)
     }
 }
 
 function renderizarEjercicios(ejercicios) {
-    const contenedor = document.getElementById('exerciseGrid');
-    if (!contenedor) return;
+    const contenedor = document.getElementById('exerciseGrid')
+    if (!contenedor) return
 
     ejercicios.forEach(ejercicio => {
-        // 1. Creamos el elemento contenedor y le asignamos la clase
-        const card = document.createElement('div');
-        card.classList.add('card-item');
-        card.setAttribute('data-name', ejercicio.nombre.toLowerCase());
-        card.setAttribute('data-group', ejercicio.grupo_muscular.split(',')[0].toLowerCase().trim());
-        card.setAttribute('data-difficulty', ejercicio.nivel.toLowerCase() === 'principiante' ? 'beg' : ejercicio.nivel.toLowerCase() === 'intermedio' ? 'int' : 'adv');
-        const modalidades = Array.isArray(ejercicio.modalidades) ? ejercicio.modalidades : ['home'];
-        card.setAttribute('data-modalities', modalidades.join(','));
+        const card = document.createElement('div')
+        card.classList.add('card-item')
+        card.setAttribute('data-name', ejercicio.nombre.toLowerCase())
+        card.setAttribute('data-group', ejercicio.grupo_muscular.split(',')[0].toLowerCase().trim())
+        card.setAttribute('data-difficulty', ejercicio.nivel.toLowerCase() === 'principiante' ? 'beg' : ejercicio.nivel.toLowerCase() === 'intermedio' ? 'int' : 'adv')
 
-        const etiquetaModalidades = modalidades.map(mod => {
-            return `<span class="tag ${mod === 'gym' ? 'gym' : 'calisthenics'}">${mod === 'gym' ? 'Gimnasio' : 'Calistenia'}</span>`;
-        }).join('');
+        const modalidades = Array.isArray(ejercicio.modalidades) ? ejercicio.modalidades : ['home']
+        card.setAttribute('data-modalities', modalidades.join(','))
 
-        const gruposMusculares = ejercicio.grupo_muscular.split(',').map(grupo => grupo.toLowerCase().trim());
+        const etiquetaModalidades = modalidades.map(mod =>
+            `<span class="tag ${mod === 'gym' ? 'gym' : 'calisthenics'}">${mod === 'gym' ? 'Gimnasio' : 'Calistenia'}</span>`
+        ).join('')
+
+        const gruposMusculares = ejercicio.grupo_muscular.split(',').map(grupo => grupo.toLowerCase().trim())
         const statsHTML = gruposMusculares.map(grupo => `
             <div class="stat-item">
                 <div class="stat-header">${grupo}</div>
@@ -61,9 +64,8 @@ function renderizarEjercicios(ejercicios) {
                     <div class="progress" style="--progress-width: 100%"></div>
                 </div>
             </div>
-        `).join('');
+        `).join('')
 
-        // 2. Inyectamos el HTML
         card.innerHTML = `
             <article class="card">
                 <header class="card-header">
@@ -88,25 +90,29 @@ function renderizarEjercicios(ejercicios) {
                     </button>
                 </footer>
             </article>
-        `;
+        `
 
-        // 3. Aplicar la imagen de fondo al header usando el DOM
-        const header = card.querySelector('.card-header');
-        if (ejercicio.imagenes && ejercicio.imagenes.length > 0) {
-            header.style.backgroundImage = `linear-gradient(to top, #000000, transparent), url('${ejercicio.imagenes[0]}')`;
+        const header = card.querySelector('.card-header')
+        if (ejercicio.imagenes && ejercicio.imagenes.length > 0 && header) {
+            const primeraImagen = ejercicio.imagenes[0]
+            const imagenUrl = typeof primeraImagen === 'string'
+                ? primeraImagen
+                : primeraImagen.webp || primeraImagen.jpg || ''
+
+            if (imagenUrl) {
+                header.style.backgroundImage = `linear-gradient(to top, #000000, transparent), url('${imagenUrl}')`
+            }
         }
 
-        // 4. Añadimos al contenedor
-        contenedor.appendChild(card);
-    });
+        contenedor.appendChild(card)
+    })
 
-    document.dispatchEvent(new Event('ejerciciosRenderizados'));
+    document.dispatchEvent(new Event('ejerciciosRenderizados'))
 }
 
-document.addEventListener('DOMContentLoaded', cargarEjercicios);
+document.addEventListener('DOMContentLoaded', cargarEjercicios)
 
 function verDetalle(id) {
-    // Ajustado para entrar a la carpeta 'ejercicios'
-    window.location.href = `ejercicios/detalle-ejercicio.html?id=${id}`;
+    window.location.href = `ejercicios/detalle-ejercicio.html?id=${id}`
 }
 

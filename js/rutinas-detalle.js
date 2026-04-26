@@ -1,17 +1,23 @@
-// js/rutinas-detalle.js
+/* ==========================================================================
+    rutinas-detalle.js
+    Descripción:
+    - Carga el detalle de la rutina seleccionada
+    - Renderiza hero, descripción, conceptos y tablas dinámicas
+    - Inicializa el acordeón para la vista de detalle
+   ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Obtener el ID de la URL
-    const params = new URLSearchParams(window.location.search);
-    const idRutina = params.get('id');
+    const params = new URLSearchParams(window.location.search)
+    const idRutina = params.get('id')
 
     if (idRutina) {
-        cargarDetalle(idRutina);
+        cargarDetalle(idRutina)
     } else {
-        console.error("No se encontró ID en la URL");
+        console.error('No se encontró ID en la URL')
         // Opcional: redirigir a inicio
     }
-});
+})
 
 async function cargarDetalle(id) {
     try {

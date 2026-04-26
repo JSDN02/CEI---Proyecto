@@ -21,52 +21,61 @@ styles.css
     - :root (colores, tipografía, espaciado, transiciones)
    ========================================================================== */
 :root {
-    /* Colors - Dark Theme */
-    --bg-primary: #101010;
-    --bg-secondary: #151515;
-    --bg-tertiary: #1f1f1f;
-    --bg-light: #f1f1f1;
+/* Colors - Dark Theme */
+--bg-primary: #101010;        /* Color de fondo principal (muy oscuro) */
+--bg-secondary: #151515;      /* Fondo secundario para secciones */
+--bg-tertiary: #1f1f1f;       /* Fondo terciario (capas o cards) */
+--bg-light: #f1f1f1;          /* Color claro para contrastes o texto */
 
-    /* Brand Colors */
-    --brand-primary: #ff7a00;
-    --brand-soft: #ff9a3c;
-    --brand-accent: #5170ff;
-    --brand-vrt: rgb(255, 77, 77);
-    --brand-gradient: linear-gradient(135deg, #ff971c, #c65d36);
-    --brand-gradient-hover: linear-gradient(135deg, #c65d36, #ff971c);
+/* Brand Colors */
+--brand-primary: #ff7a00;     /* Color principal de la marca */
+--brand-soft: #ff9a3c;        /* Variante más suave del color principal */
+--brand-accent: #5170ff;      /* Color de acento (contraste, botones secundarios) */
+--brand-vrt: rgb(255, 77, 77); /* Variante roja intensa (alertas o énfasis) */
+--brand-gradient: linear-gradient(135deg, #ff971c, #c65d36); /* Gradiente principal */
+--brand-gradient-hover: linear-gradient(135deg, #c65d36, #ff971c); /* Gradiente invertido para hover */
+--brand-progress: linear-gradient(90deg, #ff4d4d, #f9cb28); /* Gradiente de progreso */
+--brand-accent-rgb: 81, 112, 255; /* RGB para acentos semitransparentes */
+--brand-soft-rgb: 255, 154, 60; /* RGB para marca suave semitransparente */
+--text-dark-rgb: 16, 16, 16; /* RGB base para texto oscuro */
+--text-light-rgb: 241, 241, 241; /* RGB base para texto claro */
+--bg-overlay: rgba(16, 16, 16, 0.8); /* Overlay oscuro para hero/routine */
+--surface-muted: rgba(255, 255, 255, 0.03); /* Fondo sutil semi-transparente */
+--surface-dark: rgba(31, 31, 31, 0.6); /* Fondo oscuro semitransparente */
+--brand-gold-alpha: rgba(255, 215, 0, 0.3); /* Borde dorado translúcido */
 
-    /* Semantic Colors */
-    --action-hover: var(--brand-primary);
-    --action-contrast: var(--brand-accent);
-    --text-dark: var(--bg-primary);
-    --text-light: var(--bg-light);
+/* Semantic Colors */
+--action-hover: var(--brand-primary);   /* Color al pasar el cursor sobre elementos interactivos */
+--action-contrast: var(--brand-accent); /* Color para destacar acciones importantes */
+--text-dark: var(--bg-primary);         /* Color de texto oscuro */
+--text-light: var(--bg-light);          /* Color de texto claro */
 
-    /* Typography */
-    --font-main: "Inter", sans-serif;
-    --font-accent: "Cormorant Garamond", serif;
+/* Typography */
+--font-main: "Inter", sans-serif;             /* Fuente principal del sitio */
+--font-accent: "Cormorant Garamond", serif;  /* Fuente decorativa o de acento */
 
-    /* Layout */
-    --max-width: 1380px;
-    --padding-inline: 1rem;
-    --padding-btn: 0.75rem 0;
+/* Layout */
+--max-width: 1380px;         /* Ancho máximo del contenido */
+--padding-inline: 1rem;      /* Padding horizontal estándar */
+--padding-btn: 0.75rem 0;    /* Padding vertical para botones */
 
-    /* Spacing Scale */
-    --spacing-xs: 0.25rem;
-    --spacing-sm: 0.5rem;
-    --spacing-md: 1rem;
-    --spacing-lg: 1.5rem;
-    --spacing-xl: 2rem;
-    --spacing-xxl: 3rem;
+/* Spacing Scale */
+--spacing-xs: 0.25rem;  /* Espaciado muy pequeño */
+--spacing-sm: 0.5rem;   /* Espaciado pequeño */
+--spacing-md: 1rem;     /* Espaciado medio */
+--spacing-lg: 1.5rem;   /* Espaciado grande */
+--spacing-xl: 2rem;     /* Espaciado extra grande */
+--spacing-xxl: 3rem;    /* Espaciado máximo */
 
-    /* Borders */
-    --border-radius: 0.3125rem;
-    --border-line: 1px solid rgb(241, 241, 241);
-    --border-lined: 1px solid rgba(241, 241, 241, 0.2);
+/* Borders */
+--border-radius: 0.3125rem;                     /* Radio de bordes redondeados */
+--border-line: 1px solid rgb(241, 241, 241);    /* Borde sólido claro */
+--border-lined: 1px solid rgba(241, 241, 241, 0.2); /* Borde más sutil/transparente */
 
-    /* Transitions */
-    --transition-fast: 200ms ease;
-    --transition-normal: 300ms ease;
-    --transition-smooth: 400ms ease;
+/* Transitions */
+--transition-fast: 200ms ease;    /* Transición rápida */
+--transition-normal: 300ms ease;  /* Transición estándar */
+--transition-smooth: 400ms ease;  /* Transición más suave y lenta */
 }
 
 /* ==========================================================================
@@ -254,13 +263,16 @@ li {
     gap: var(--spacing-sm);
 }
 
-.btn-card {
+.btn-card,
+.btn-filter {
     background-color: var(--brand-accent);
+}
+
+.btn-card {
     font-size: 0.75rem;
 }
 
 .btn-filter {
-    background-color: var(--brand-accent);
     min-width: 140px;
 }
 
@@ -373,7 +385,7 @@ li {
    ========================================================================== */
 .hero {
     height: 90vh;
-    background-image: linear-gradient(to top, #000000, transparent), url('../assets/images/backgrounds/tojiFushiguro_11zon.webp');
+    background-image: linear-gradient(to top, var(--bg-primary), transparent), url('../assets/images/backgrounds/tojiFushiguro_11zon.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -382,7 +394,7 @@ li {
 
 .hero-routine {
     height: 60vh;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent), url('../assets/images/personajes/itadoriYuuji/itadoriYuuji_A_11zon.webp');
+    background-image: linear-gradient(to top, var(--bg-overlay), transparent), url('../assets/images/personajes/itadoriYuuji/itadoriYuuji_A_11zon.webp');
     width: calc(100% - 2rem);
     margin-inline: var(--spacing-md);
     border-radius: var(--border-radius);
@@ -419,8 +431,6 @@ li {
 .feature__content {
     flex: 1 1 300px;
     min-width: 300px;
-    display: flex;
-    flex-flow: column nowrap;
     gap: 2rem;
 }
 
@@ -484,21 +494,15 @@ li {
 }
 
 .aside__block {
-    display: flex;
-    flex-flow: column nowrap;
     justify-content: space-between;
     gap: var(--spacing-lg);
 }
 
 .aside__filters {
-    display: flex;
-    flex-flow: column nowrap;
     gap: 2.5rem;
 }
 
 .filter-group {
-    display: flex;
-    flex-flow: column nowrap;
     gap: var(--spacing-md);
 }
 
@@ -508,20 +512,20 @@ li {
     color: var(--text-dark);
     width: 100%;
     padding: 10px;
-    border: 1px solid rgba(241, 241, 241, 1);
+    border: var(--border-line);
     border-radius: var(--border-radius);
     outline: none;
     transition: all var(--transition-fast);
+}
+
+.filter-group input[type="text"]::placeholder {
+    color: rgba(var(--text-dark-rgb), 0.5);
 }
 
 .filter-group input[type="text"]:focus,
 .filter-group select:focus {
     outline: 2px solid var(--brand-primary);
     outline-offset: 2px;
-}
-
-.filter-group input[type="text"]::placeholder {
-    color: rgba(16, 16, 16, 0.5);
 }
 
 .checkbox-list {
@@ -604,7 +608,7 @@ li {
 
 .mensaje-vacio-content p {
     font-size: 0.95rem;
-    color: rgba(241, 241, 241, 0.7);
+    color: rgba(var(--text-light-rgb), 0.7);
 }
 
 .card-item {
@@ -659,7 +663,7 @@ li {
 .card-header {
     width: 100%;
     height: 175px;
-    background-image: linear-gradient(to top, #000000, transparent), url("../assets/images/personajes/itadoriYuuji/itadoriYuuji_B_11zon.webp");
+    background-image: linear-gradient(to top, var(--bg-primary), transparent), url("../assets/images/personajes/itadoriYuuji/itadoriYuuji_B_11zon.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -669,19 +673,17 @@ li {
 .card-banner-content {
     height: 100%;
     padding: var(--spacing-md);
-    display: flex;
-    flex-flow: column nowrap;
     justify-content: space-between;
     align-items: flex-start;
     gap: var(--spacing-sm);
 }
 
 .badge {
-    background: rgba(31, 31, 31, 0.6);
+    background: var(--surface-dark);
     backdrop-filter: blur(10px);
     padding: 5px 12px;
     border-radius: var(--border-radius);
-    border: 1px solid rgba(255, 215, 0, 0.3);
+    border: 1px solid var(--brand-gold-alpha);
     font-weight: bold;
     text-transform: uppercase;
     font-size: 0.75rem;
@@ -689,8 +691,6 @@ li {
 
 .card-content {
     padding: var(--spacing-sm);
-    display: flex;
-    flex-flow: column nowrap;
     gap: 0.625rem;
 }
 
@@ -707,13 +707,13 @@ li {
 }
 
 .gym {
-    background-color: rgba(0, 110, 255, 0.2);
+    background-color: rgba(var(--brand-accent-rgb), 0.2);
     color: var(--brand-accent);
     font-weight: 700;
 }
 
 .calisthenics {
-    background-color: rgba(255, 154, 60, 0.2);
+    background-color: rgba(var(--brand-soft-rgb), 0.2);
     color: var(--brand-soft);
     font-weight: 700;
 }
@@ -725,7 +725,7 @@ li {
 }
 
 .stat-item {
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--surface-muted);
     padding: 10px;
     border-radius: var(--border-radius);
     text-transform: uppercase;
@@ -739,20 +739,18 @@ li {
 
 .progress-bar {
     height: 4px;
-    background: #333;
+    background: var(--bg-tertiary);
 }
 
 .progress {
     width: var(--progress-width);
     height: 4px;
-    background: linear-gradient(90deg, #ff4d4d, #f9cb28);
+    background: var(--brand-progress);
     transition: width 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .card-action {
     padding: var(--spacing-sm);
-    display: flex;
-    flex-flow: column nowrap;
     gap: 0.625rem;
 }
 
@@ -766,8 +764,6 @@ li {
 }
 
 .hero__block-detalle {
-    display: flex;
-    flex-flow: column nowrap;
     justify-content: end;
     align-items: start;
     position: relative;
@@ -776,8 +772,6 @@ li {
 
 .hero__text-detalle {
     padding: var(--spacing-md) var(--spacing-xl);
-    display: flex;
-    flex-flow: column nowrap;
     align-items: start;
     background-color: rgba(241, 241, 241, 0.2);
     backdrop-filter: blur(2px);
@@ -788,9 +782,20 @@ li {
     border: var(--action-hover) 1px solid;
 }
 
+.feature__content,
+.aside__block,
+.aside__filters,
+.filter-group,
+.card-banner-content,
+.card-content,
+.card-action,
 .training__block,
 .training__content,
-.training__list {
+.training__list,
+.detail__block,
+.detail__routine,
+.hero__block-detalle,
+.hero__text-detalle {
     display: flex;
     flex-flow: column nowrap;
 }
@@ -810,14 +815,10 @@ li {
 }
 
 .detail__block {
-    display: flex;
-    flex-flow: column nowrap;
     gap: var(--spacing-xl);
 }
 
 .detail__routine {
-    display: flex;
-    flex-flow: column nowrap;
     gap: var(--spacing-sm);
 }
 
@@ -828,7 +829,8 @@ li {
 }
 
 /* Table styles */
-table {
+table,
+.rutina-table {
     width: 100%;
     margin: var(--spacing-md) 0;
     padding: var(--spacing-md);
@@ -864,15 +866,6 @@ tbody tr:nth-child(odd) {
 }
 
 /* Legacy support - if html uses custom table elements */
-.rutina-table {
-    width: 100%;
-    margin: var(--spacing-md) 0;
-    padding: var(--spacing-md);
-    border: var(--border-line);
-    border-radius: var(--border-radius);
-    border-collapse: collapse;
-    overflow: hidden;
-}
 
 /* ==========================================================================
     ACORDEÓN
@@ -907,17 +900,21 @@ tbody tr:nth-child(odd) {
     flex: 1 1 300px;
 }
 
-.footer__nav {
-    flex: 1 1 300px;
+.footer__nav,
+.footer__nav .footer-navigation,
+.footer__social,
+.footer__bottom-phrase {
     display: flex;
     flex-flow: column nowrap;
+}
+
+.footer__nav {
+    flex: 1 1 300px;
     align-items: center;
 }
 
 .footer__nav .footer-navigation {
     width: fit-content;
-    display: flex;
-    flex-flow: column nowrap;
     justify-content: start;
     gap: var(--spacing-md);
 }
@@ -934,8 +931,6 @@ tbody tr:nth-child(odd) {
 
 .footer__social {
     flex: 1 1 300px;
-    display: flex;
-    flex-flow: column nowrap;
     align-items: end;
     gap: var(--spacing-md);
 }
@@ -979,8 +974,6 @@ tbody tr:nth-child(odd) {
 }
 
 .footer__bottom-phrase {
-    display: flex;
-    flex-flow: column nowrap;
     align-items: end;
 }
 
@@ -1037,7 +1030,6 @@ tbody tr:nth-child(odd) {
         transition: transform var(--transition-normal) ease-in-out;
         height: 100vh;
         overflow-y: auto;
-        background-color: var(--bg-tertiary);
         padding-block: var(--spacing-xs);
     }
 
@@ -1105,17 +1097,13 @@ tbody tr:nth-child(odd) {
     }
 
     /* Ajustes para tablas en tablets */
-    .table-container {
-        overflow-x: auto;
-    }
-
     .rutina-table {
-        min-width: 600px; /* Asegura que la tabla no se comprima demasiado */
+        font-size: 0.9rem;
     }
 
     th,
     td {
-        padding: 8px 10px; /* Reducir padding en tablets */
+        padding: 8px 10px; 
         font-size: 0.9rem;
     }
 
@@ -1150,19 +1138,17 @@ tbody tr:nth-child(odd) {
 
     /* Ajustes para tablas en móviles */
     .table-container {
-        overflow-x: auto;
         -webkit-overflow-scrolling: touch; /* Suave scroll en iOS */
     }
 
     .rutina-table {
-        min-width: 600px; /* Mantiene el ancho mínimo */
-        font-size: 0.8rem; /* Fuente más pequeña */
+        font-size: 0.8rem; 
     }
 
     th,
     td {
-        padding: 6px 8px; /* Padding aún más reducido */
-        white-space: nowrap; /* Evita que el texto se rompa */
+        padding: 6px 8px; 
+        white-space: nowrap;
     }
 
 }
