@@ -8,7 +8,7 @@
 
 class FiltroEjercicios {
     constructor() {
-        this.nameInput = document.getElementById('name')
+        this.nameInput = document.getElementById('filterName')
         this.groupSelect = document.getElementById('filterMusculo')
         this.difficulty = document.getElementById('difficulty')
         this.modalityInputs = document.querySelectorAll('.aside__filters input[type="checkbox"]')

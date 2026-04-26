@@ -99,12 +99,6 @@ function verDetalle(id) {
     window.location.href = `rutinas/detalle-rutina.html?id=${id}`
 }
 
-document.addEventListener('DOMContentLoaded', cargarRutinas);
-
-function verDetalle(id) {
-    // Ajustado para entrar a la carpeta 'rutinas'
-    window.location.href = `rutinas/detalle-rutina.html?id=${id}`;
-}
 
 
 
@@ -117,8 +111,3 @@ function verDetalle(id) {
 
 
 
-
-function verDetalle(id) {
-    // Ajustado para entrar a la carpeta 'rutinas'
-    window.location.href = `rutinas/detalle-rutina.html?id=${id}`;
-}

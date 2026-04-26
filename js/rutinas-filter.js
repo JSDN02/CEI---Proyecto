@@ -123,15 +123,18 @@ class FiltroRutinas {
 
         if (this.filtrosActivos.modalidad.length > 0) {
             const tieneModalidad = this.filtrosActivos.modalidad.some(modalidadSeleccionada => {
+                const modalidadTag = rutina.card.modalidad.tag.toLowerCase()
                 if (modalidadSeleccionada === 'gym') {
-                    return rutina.card.modalidad.tag.includes('versatil') ||
-                        rutina.card.modalidad.tag.includes('gym') ||
-                        rutina.card.modalidad.tag === 'versatil'
+                    return modalidadTag.includes('versatil') ||
+                        modalidadTag.includes('gym') ||
+                        modalidadTag === 'versatil'
                 }
                 if (modalidadSeleccionada === 'home') {
-                    return rutina.card.modalidad.tag.includes('calistenia') ||
-                        rutina.card.modalidad.tag.includes('versatil') ||
-                        rutina.card.modalidad.tag === 'versatil'
+                    return modalidadTag.includes('calistenics') ||
+                        modalidadTag.includes('calisthenics') ||
+                        modalidadTag.includes('calistenia') ||
+                        modalidadTag.includes('versatil') ||
+                        modalidadTag === 'versatil'
                 }
                 return false
             })
@@ -173,6 +176,15 @@ class FiltroRutinas {
             enfoque: [],
             dificultad: 'all',
             modalidad: []
+        }
+
+        if (this.nameInput) this.nameInput.value = ''
+        if (this.enfoque) this.enfoque.value = 'all'
+        if (this.difficulty) this.difficulty.value = 'all'
+        if (this.modalidad) {
+            this.modalidad.forEach(checkbox => {
+                checkbox.checked = false
+            })
         }
 
         const cards = this.gridContainer.querySelectorAll('.card-item')
