@@ -38,6 +38,12 @@ async function cargarEjercicios() {
     }
 }
 
+function resolveEjercicioAssetPath(path) {
+    if (!path) return ''
+    if (path.startsWith('http') || path.startsWith('/')) return path
+    return `../${path.replace(/^(\.\.\/)+/, '')}`
+}
+
 function renderizarEjercicios(ejercicios) {
     const contenedor = document.getElementById('exerciseGrid')
     if (!contenedor) return
@@ -99,8 +105,9 @@ function renderizarEjercicios(ejercicios) {
                 ? primeraImagen
                 : primeraImagen.webp || primeraImagen.jpg || ''
 
-            if (imagenUrl) {
-                header.style.backgroundImage = `linear-gradient(to top, #000000, transparent), url('${imagenUrl}')`
+            const resolvedImageUrl = resolveEjercicioAssetPath(imagenUrl)
+            if (resolvedImageUrl) {
+                header.style.backgroundImage = `linear-gradient(to top, #000000, transparent), url('${resolvedImageUrl}')`
             }
         }
 

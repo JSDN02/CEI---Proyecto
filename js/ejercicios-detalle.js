@@ -37,15 +37,22 @@ async function cargarDetalle(id) {
     }
 }
 
+function resolveEjercicioAssetPath(path) {
+    if (!path) return ''
+    if (path.startsWith('http') || path.startsWith('/')) return path
+    return `../../${path.replace(/^(\.\.\/)+/, '')}`
+}
+
 function renderPicture(imagen, alt) {
     if (!imagen) return ''
     if (typeof imagen === 'string') {
-        return `<picture><img src="${imagen}" alt="${alt}" style="width:100%; max-width:640px; margin: 10px 0; border-radius: 12px;" loading="lazy"></picture>`
+        const resolvedSrc = resolveEjercicioAssetPath(imagen)
+        return `<picture><img src="${resolvedSrc}" alt="${alt}" style="width:100%; max-width:640px; margin: 10px 0; border-radius: 12px;" loading="lazy"></picture>`
     }
 
-    const sourceWebp = imagen.webp ? `<source type="image/webp" srcset="${imagen.webp}">` : ''
+    const sourceWebp = imagen.webp ? `<source type="image/webp" srcset="${resolveEjercicioAssetPath(imagen.webp)}">` : ''
     const fallbackSrc = imagen.jpg || imagen.webp || ''
-    const imgTag = fallbackSrc ? `<img src="${fallbackSrc}" alt="${alt}" style="width:100%; max-width:640px; margin: 10px 0; border-radius: 12px;" loading="lazy">` : ''
+    const imgTag = fallbackSrc ? `<img src="${resolveEjercicioAssetPath(fallbackSrc)}" alt="${alt}" style="width:100%; max-width:640px; margin: 10px 0; border-radius: 12px;" loading="lazy">` : ''
 
     return `<picture>${sourceWebp}${imgTag}</picture>`
 }
@@ -69,7 +76,7 @@ function renderizarDetalle(ejercicio) {
         ? (ejercicio.imagenes[0].jpg || ejercicio.imagenes[0].webp)
         : (ejercicio.variaciones && ejercicio.variaciones[0] && (ejercicio.variaciones[0].imagen.jpg || ejercicio.variaciones[0].imagen.webp))
     if (heroDetalle && heroBg) {
-        heroDetalle.style.backgroundImage = `linear-gradient(to top, rgba(0, 0, 0, .8), transparent), url('${heroBg}')`
+        heroDetalle.style.backgroundImage = `linear-gradient(to top, rgba(0, 0, 0, .8), transparent), url('${resolveEjercicioAssetPath(heroBg)}')`
     }
 
     // 2. Renderizado de Descripción
